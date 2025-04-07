@@ -66,3 +66,15 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Send Telegram notification
+        uses: appleboy/telegram-action@v0.1.1
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            🚀 SymediaWiki 部署成功！
+
+            🔗 访问地址: https://shenxianmq.github.io/SymediaWiki/
+            📅 部署时间: ${{ github.event.head_commit.timestamp }}
+            📝 提交信息: ${{ github.event.head_commit.message }}
+            👤 提交者: ${{ github.event.head_commit.author.name }}
