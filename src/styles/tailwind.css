@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --sy-primary-color: #3b82f6;
+    --sy-primary-color-light: #60a5fa;
+    --sy-primary-color-dark: #2563eb;
+    --sy-gradient-primary: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    --sy-gradient-blue-cyan: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    --sy-gradient-cyan-blue: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+    --sy-gradient-blue-purple: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    --sy-gradient-hot: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
+  }
+} 
