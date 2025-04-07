@@ -27,8 +27,20 @@ jobs:
         run: pnpm install
       - name: Generate site
         run: pnpm docs:build
+      - name: Check public directory
+        run: |
+          echo "Listing public directory:"
+          ls -la public/
+          echo "Listing public/assets directory:"
+          ls -la public/assets/ || echo "assets directory not found"
       - name: Check build output
-        run: ls -la .vitepress/dist/
+        run: |
+          echo "Listing dist directory:"
+          ls -la .vitepress/dist/
+          echo "Listing dist/assets directory:"
+          ls -la .vitepress/dist/assets/ || echo "assets directory not found"
+          echo "Listing dist/SymediaWiki directory:"
+          ls -la .vitepress/dist/SymediaWiki/ || echo "SymediaWiki directory not found"
       - name: Deploy to server
         uses: appleboy/scp-action@v0.1.7
         with:

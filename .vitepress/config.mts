@@ -7,16 +7,24 @@ export default defineConfig({
   lang: "zh-CN",
   title: "Symedia",
   description: "智能云端媒体库管家",
-  head: [["link", { rel: "icon", href: "/favicon.png" }]],
+  head: [["link", { rel: "icon", href: "/SymediaWiki/favicon.png" }]],
   vite: {
     build: {
       assetsInlineLimit: 0,
+      rollupOptions: {
+        output: {
+          manualChunks: undefined,
+        },
+      },
     },
     publicDir: "public",
   },
   themeConfig: {
     siteTitle: " ",
-    logo: { light: "/logo-light.png", dark: "/logo-dark.png" },
+    logo: {
+      light: "/SymediaWiki/logo-light.png",
+      dark: "/SymediaWiki/logo-dark.png",
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "主页", link: "/" },

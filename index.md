@@ -7,12 +7,12 @@ hero:
   text: "智能云端媒体库管家"
   tagline: "网盘用户的终极解决方案"
   image:
-    src: /banner.png
+    src: /SymediaWiki/banner.png
     alt: background
   actions:
     - theme: brand
       text: 快速开始
-      link: /archive/symedia部署教程
+      link: /archive/symedia/symedia部署教程
     - theme: alt
       text: API Examples
       link: /api-examples
