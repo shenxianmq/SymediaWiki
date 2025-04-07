@@ -22,8 +22,8 @@ export default defineConfig({
   themeConfig: {
     siteTitle: " ",
     logo: {
-      light: "/SymediaWiki/logo-light.png",
-      dark: "/SymediaWiki/logo-dark.png",
+      light: "logo-light.png",
+      dark: "logo-dark.png",
     },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
