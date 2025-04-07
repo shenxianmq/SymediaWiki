@@ -37,6 +37,11 @@
   /* 次级背景色 */  
   --vp-c-bg-soft: #111125;
   --vp-c-bg-mute: #1a1a30;
+
+  --vp-sidebar-bg-color: #121826;
+
+  --vp-c-bg-alt: #171d2b;
+  --vp-c-neutral-inverse:#171d2b;
   
   /* 边框和分隔线 */
   --vp-c-divider: rgba(84, 84, 128, 0.2);

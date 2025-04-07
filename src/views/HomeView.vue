@@ -56,15 +56,23 @@
             </div>
             <div class="showcase-image">
               <img v-if="item.image" :src="item.image" alt="功能展示" class="showcase-img">
-              <div v-else class="image-placeholder"></div>
+              <video v-else-if="item.video" class="showcase-video" controls preload="metadata">
+                <source :src="item.video" type="video/mp4">
+                您的浏览器不支持视频播放，请升级或更换浏览器
+              </video>
+              <div v-if="item.video" class="copyright-disclaimer">
+                <p>版权免责声明：此演示视频仅用于功能展示，所有媒体内容的版权归原作者所有。Symedia与FastEmby仅为技术工具，不提供、存储任何版权内容，不对用户使用行为负责。</p>
+              </div>
+              <div v-if="!item.image && !item.video" class="image-placeholder"></div>
             </div>
           </div>
-          <div class="showcase-nav">
-            <div class="showcase-dots">
-              <span v-for="(_, dotIndex) in showcases" :key="dotIndex" :class="{ active: dotIndex === currentShowcase }"
-                @click="scrollToShowcase(dotIndex)"></span>
-            </div>
-          </div>
+        </div>
+      </div>
+      <!-- 将导航点移到这里，位于showcase外部 -->
+      <div class="showcase-nav">
+        <div class="showcase-dots">
+          <span v-for="(_, dotIndex) in showcases" :key="dotIndex" :class="{ active: dotIndex === currentShowcase }"
+            @click="scrollToShowcase(dotIndex)"></span>
         </div>
       </div>
     </div>
@@ -75,16 +83,22 @@
         <h2 class="section-title" data-text="与FastEmby完美配合">与FastEmby完美配合</h2>
         <div class="integration-content">
           <div class="integration-text">
-            <p>Symedia可与FastEmby无缝配合，实现媒体文件的一站式管理和播放解决方案：</p>
+            <p>Symedia可与FastEmby无缝配合</p>
+            <p>实现媒体文件的一站式管理和播放解决方案：</p>
             <ul class="integration-list">
-              <li>自动302重定向，让Emby直接播放115网盘内容</li>
+              <li>自动302重定向，让Emby直接播放网盘内容</li>
               <li>支持傻瓜式路径配置，轻松设置网盘与本地路径映射</li>
-              <li>支持多种网盘接入，包括115、123等</li>
-              <li>内置自动刮削功能，生成完整媒体元数据</li>
+              <li>支持多种网盘接入，包括115、阿里云盘、夸克网盘等主流网盘</li>
             </ul>
           </div>
           <div class="integration-image">
-            <div class="image-placeholder"></div>
+            <video class="fastemby-video" controls preload="metadata">
+              <source :src="fastembyVideo" type="video/mp4">
+              您的浏览器不支持视频播放，请升级或更换浏览器
+            </video>
+            <div class="copyright-disclaimer">
+              <p>版权免责声明：此演示视频仅用于功能展示，所有媒体内容的版权归原作者所有。Symedia与FastEmby仅为技术工具，不提供、存储任何版权内容，不对用户使用行为负责。</p>
+            </div>
           </div>
         </div>
       </div>
@@ -125,6 +139,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const banner = new URL('../../public/assets/banner.jpg', import.meta.url).href
 const bannerMobile = new URL('../../public/assets/banner-mobile.png', import.meta.url).href
+const fastembyVideo = new URL('../../public/videos/fastemby演示.mp4', import.meta.url).href
 
 const features = [
   {
@@ -264,7 +279,26 @@ const showcases = [
       }
     ],
     image: new URL('../../public/assets/images/响应式布局.jpg', import.meta.url).href
-  }
+  },
+  // {
+  //   title: 'FastEmby无缝对接',
+  //   content: [
+  //     {
+  //       subtitle: '媒体网盘直链播放系统',
+  //       points: [
+  //         '创新302重定向技术，让Emby直接播放115/阿里云盘等网盘内容',
+  //         '秒级加载，播放体验媲美本地',
+  //       ]
+  //     },
+  //     {
+  //       subtitle: '快速傻瓜式路径映射',
+  //       points: [
+  //         '智能路径映射，自动匹配网盘与本地Emby路径',
+  //       ]
+  //     }
+  //   ],
+  //   video: fastembyVideo
+  // },
 ]
 const testimonials = [
   {
@@ -280,8 +314,32 @@ const testimonials = [
     author: '建库狂人老文'
   },
   {
-    content: '我每次去找我的小姐妹的时候，在包间里都可以一起愉快的观影了。',
-    author: '洗浴专家泰迪熊'
+    content: '说到Symedia的使用体验，一句话就够了：老婆也能用的影音整理工具。',
+    author: 'IT项目经理鸥歌'
+  },
+  {
+    content: '一键转存、自动整理入库、实时生成Strm、外网满速播放，如此完美的Emby观影体验，目前真的只有Symedia+FastEmby才能实现。',
+    author: '陌轩'
+  },
+  {
+    content: '如果你给了115四星好评，那最后一星的体验Symedia替你补了。',
+    author: 'Tyboe'
+  },
+  {
+    content: '别让马斯克知道这玩意，不然他下次发射火箭可能偷装 Symedia+FastEmby，"星链？弱爆了，我这叫星际影库！"',
+    author: '加勒比海带'
+  },
+  {
+    content: '✨五星力荐！Symedia+FastEmby带来的影音革命！✨可以负责任地说：如此极致流畅的「全链路观影解决方案」，目前唯有Symedia + FastEmby能完美实现！影音爱好者不容错过的终极之选！',
+    author: '影音爱好者夜灵峰'
+  },
+  {
+    content: '以前整理7500部电影花了一星期，现在用Symedia配合OpenAPI和ChatGPT助力，半天就能完成。智能识别自动去重，大包整理变得超级轻松！',
+    author: '爱影频道 H.T'
+  },
+  {
+    content: '每次女儿想看什么电视的时候，只要跟我说一声，我转存一下，几分钟后就出现在Emby媒体库中了',
+    author: '黄毛终结者泰迪熊'
   }
 ]
 
@@ -295,13 +353,46 @@ const checkIsMobile = () => {
 const currentShowcase = ref(0)
 const isScrolling = ref(false)
 
-// 滚动到指定的showcase
-const scrollToShowcase = (index) => {
-  if (index >= 0 && index < showcases.length) {
-    currentShowcase.value = index
-    document.getElementById(`showcase-${index}`).scrollIntoView({
-      behavior: 'smooth'
-    })
+// 添加触摸事件支持
+const touchStartY = ref(0)
+const touchEndY = ref(0)
+const touchThreshold = 50 // 触摸阈值，需要滑动超过这个距离才会触发翻页
+
+// 处理触摸开始事件
+const handleTouchStart = (event) => {
+  touchStartY.value = event.touches[0].clientY
+}
+
+// 处理触摸结束事件
+const handleTouchEnd = (event) => {
+  // 仅在showcase区域内处理
+  const showcaseContainer = document.querySelector('.home-showcase-container')
+  if (!showcaseContainer) return
+
+  const rect = showcaseContainer.getBoundingClientRect()
+  const isInViewport = (
+    rect.top < window.innerHeight &&
+    rect.bottom > 0
+  )
+
+  if (!isInViewport || isScrolling.value) return
+
+  touchEndY.value = event.changedTouches[0].clientY
+  const deltaY = touchStartY.value - touchEndY.value
+
+  if (Math.abs(deltaY) > touchThreshold) {
+    // 防止触发默认的页面滚动
+    event.preventDefault()
+    isScrolling.value = true
+    setTimeout(() => { isScrolling.value = false }, 800) // 防抖
+
+    if (deltaY > 0 && currentShowcase.value < showcases.length - 1) {
+      // 向上滑动，显示下一个
+      scrollToShowcase(currentShowcase.value + 1)
+    } else if (deltaY < 0 && currentShowcase.value > 0) {
+      // 向下滑动，显示上一个
+      scrollToShowcase(currentShowcase.value - 1)
+    }
   }
 }
 
@@ -331,31 +422,156 @@ const handleWheel = (event) => {
   }
 }
 
+// 针对移动端优化的滚动函数
+const scrollToShowcase = (index) => {
+  if (index >= 0 && index < showcases.length) {
+    currentShowcase.value = index
+    const element = document.getElementById(`showcase-${index}`)
+    if (element) {
+      // 计算滚动位置
+      const elementRect = element.getBoundingClientRect()
+      const elementHeight = elementRect.height
+      const windowHeight = window.innerHeight
+      const elementTop = window.scrollY + elementRect.top
+
+      // 移动端和桌面端不同的处理逻辑
+      if (isMobile.value) {
+        // 移动端：计算更精确的居中位置
+        // 对于每个卡片使用动态计算，而不是固定百分比
+        const visibleHeight = Math.min(elementHeight, windowHeight * 0.8) // 限制最大可见高度
+        const topOffset = (windowHeight - visibleHeight) / 2 // 居中显示
+        window.scrollTo({
+          top: elementTop - topOffset + 10, // 微调顶部偏移，+10使其稍微上移
+          behavior: 'smooth'
+        })
+      } else {
+        // 桌面端：居中显示
+        // 增加顶部偏移量，使卡片在视口中更居中
+        const scrollToY = elementTop - ((windowHeight - elementHeight) / 2)
+        // 增加垂直偏移量，使卡片更靠上一些
+        const topOffset = 20
+        window.scrollTo({
+          top: Math.max(0, scrollToY - topOffset),
+          behavior: 'smooth'
+        })
+      }
+    }
+  }
+}
+
 onMounted(() => {
   checkIsMobile()
   window.addEventListener('resize', checkIsMobile)
   window.addEventListener('wheel', handleWheel)
 
-  // 添加滚动监听器来更新当前的showcase
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id
-        const index = parseInt(id.split('-')[1])
-        currentShowcase.value = index
-      }
-    })
-  }, { threshold: 0.5 })
+  // 添加触摸事件监听器
+  window.addEventListener('touchstart', handleTouchStart)
+  window.addEventListener('touchend', handleTouchEnd)
 
-  showcases.forEach((_, index) => {
-    const el = document.getElementById(`showcase-${index}`)
-    if (el) observer.observe(el)
+  // 添加滚动事件监听器，用于控制导航点的显示和隐藏
+  window.addEventListener('scroll', handleScroll)
+
+  // 在任何异步操作之前注册 onUnmounted 钩子
+  let observerInstance = null
+  let resizeObserverInstance = null
+
+  // 在组件卸载时清理所有事件监听器和观察器
+  onUnmounted(() => {
+    if (resizeObserverInstance) {
+      resizeObserverInstance.disconnect()
+    }
+    if (observerInstance) {
+      observerInstance.disconnect()
+    }
+    window.removeEventListener('wheel', handleWheel)
+    window.removeEventListener('resize', checkIsMobile)
+    window.removeEventListener('touchstart', handleTouchStart)
+    window.removeEventListener('touchend', handleTouchEnd)
+    window.removeEventListener('scroll', handleScroll)
   })
+
+  // 等待Vue完成DOM更新
+  setTimeout(() => {
+    // 添加滚动监听器来更新当前的showcase
+    observerInstance = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id
+          const index = parseInt(id.split('-')[1])
+          if (currentShowcase.value !== index) {
+            currentShowcase.value = index
+          }
+        }
+      })
+    }, { threshold: 0.5 })
+
+    // 使用ResizeObserver监听窗口大小变化
+    if (typeof ResizeObserver !== 'undefined') {
+      resizeObserverInstance = new ResizeObserver(debounce(() => {
+        // 仅在用户已经滚动到showcase部分时才重新计算位置
+        if (currentShowcase.value >= 0 && isInShowcaseView()) {
+          scrollToShowcase(currentShowcase.value)
+        }
+      }, 200)) // 添加防抖
+
+      // 监听body元素大小变化
+      resizeObserverInstance.observe(document.body)
+
+      // 观察每个showcase节点
+      showcases.forEach((_, index) => {
+        const el = document.getElementById(`showcase-${index}`)
+        if (el) {
+          observerInstance.observe(el)
+        }
+      })
+    } else {
+      // 降级处理，如果浏览器不支持ResizeObserver
+      showcases.forEach((_, index) => {
+        const el = document.getElementById(`showcase-${index}`)
+        if (el) observerInstance.observe(el)
+      })
+    }
+  }, 100)
 })
 
-onUnmounted(() => {
-  window.removeEventListener('wheel', handleWheel)
-})
+// 判断用户是否在showcase视图中
+const isInShowcaseView = () => {
+  const showcaseContainer = document.querySelector('.home-showcase-container')
+  if (!showcaseContainer) return false
+
+  const rect = showcaseContainer.getBoundingClientRect()
+  return (
+    rect.top < window.innerHeight &&
+    rect.bottom > 0
+  )
+}
+
+// 简单的防抖函数
+const debounce = (fn, delay) => {
+  let timer = null
+  return function () {
+    const context = this
+    const args = arguments
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      fn.apply(context, args)
+    }, delay)
+  }
+}
+
+// 处理滚动事件，控制导航点的显示和隐藏
+const handleScroll = () => {
+  const showcaseContainer = document.querySelector('.home-showcase-container')
+  const showcaseNav = document.querySelector('.showcase-nav')
+  if (!showcaseContainer || !showcaseNav) return
+
+  const inView = isInShowcaseView()
+  if (inView) {
+    showcaseNav.classList.add('visible')
+  } else {
+    showcaseNav.classList.remove('visible')
+  }
+}
 </script>
 
 <style>
@@ -533,82 +749,109 @@ onUnmounted(() => {
 
 .home-showcase-container {
   position: relative;
-  height: 100vh;
   width: 100%;
-  overflow: hidden;
+  padding: 100px 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+    min-height: initial;
+  }
 }
 
 .home-showcase {
-  height: 100vh;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 150px;
+  padding: 20px 0;
 
-  /* 隐藏滚动条 */
-  scrollbar-width: none;
-  /* Firefox */
-  -ms-overflow-style: none;
-
-  /* IE and Edge */
-  &::-webkit-scrollbar {
-    display: none;
-    /* Chrome, Safari and Opera */
+  @media (max-width: 768px) {
+    gap: 80px;
   }
 }
 
 .showcase-section {
-  height: 100vh;
-  width: 100%;
+  width: 90%;
+  max-width: 1200px;
+  height: 70vh;
+  margin: 0;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  scroll-snap-align: start;
   position: relative;
-  padding: 0 5%;
+  overflow: auto;
+
+  background: linear-gradient(45deg, rgba(76, 138, 231, 0.1), rgba(142, 84, 233, 0.1));
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(76, 138, 231, 0.15);
+  border: none;
 
   @media (max-width: 768px) {
+    height: auto;
+    min-height: 80vh;
+    max-height: 85vh;
+    /* 限制最大高度 */
+    padding: 20px 15px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    padding-top: 60px;
+    /* 从顶部开始布局 */
   }
 }
 
 .showcase-nav {
-  position: absolute;
+  position: fixed;
   right: 30px;
   top: 50%;
   transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  z-index: 10;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.showcase-nav.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .showcase-dots {
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(76, 138, 231, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.active {
+      background: linear-gradient(135deg, #4a8af4, #9254de);
+      transform: scale(1.2);
+      box-shadow: 0 0 10px rgba(74, 138, 244, 0.5);
+    }
+  }
 }
 
-.showcase-dots span {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: var(--vp-c-divider);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.showcase-dots span.active {
-  background-color: var(--sy-primary-color);
-  transform: scale(1.2);
-}
-
-.home-showcase .showcase-row {
+.showcase-row {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: flex-start;
+  height: 100%;
+  overflow: auto;
 
   &.reverse {
     flex-direction: row-reverse;
@@ -616,11 +859,22 @@ onUnmounted(() => {
 
   .showcase-text {
     flex: 1;
-    padding: 0 40px;
-    padding-top: 20px;
+    padding: 0 30px;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(76, 138, 231, 0.3);
+      border-radius: 10px;
+    }
 
     h3 {
-      font-size: 36px;
+      font-size: 34px;
       font-weight: 600;
       margin-bottom: 16px;
       color: transparent;
@@ -633,13 +887,13 @@ onUnmounted(() => {
     }
 
     .content-section {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .content-subtitle {
       font-size: 18px;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       color: #5bc3e3;
       display: block;
     }
@@ -650,20 +904,22 @@ onUnmounted(() => {
 
       li {
         font-size: 15px;
-        line-height: 1.6;
+        line-height: 1.5;
         font-weight: 600;
         color: var(--vp-c-text-2);
-        margin-bottom: 6px;
+        margin-bottom: 4px;
       }
     }
   }
 
   .showcase-image {
-    flex: 2;
+    flex: 1.5;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    height: 100%;
+    flex-direction: column;
 
     .image-placeholder {
       width: 100%;
@@ -673,18 +929,29 @@ onUnmounted(() => {
       border: 1px solid var(--vp-c-divider);
     }
 
-    .showcase-img {
+    .showcase-img,
+    .showcase-video {
       width: 100%;
-      max-width: 800px;
-      max-height: 550px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px var(--vp-c-shadow-1);
-      transition: all 0.3s ease;
-      object-fit: contain;
+      max-width: 700px;
+      max-height: 90%;
+      border-radius: 12px;
+      margin-top: 0;
+    }
 
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 24px var(--vp-c-shadow-2);
+    .copyright-disclaimer {
+      margin-top: 10px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      max-width: 700px;
+      width: 100%;
+
+      p {
+        font-size: 12px;
+        line-height: 1.4;
+        color: var(--vp-c-text-3);
+        text-align: center;
+        margin: 0;
       }
     }
   }
@@ -692,61 +959,121 @@ onUnmounted(() => {
 
 .home-integration {
   padding: 60px 0;
-  background: var(--vp-c-bg-soft);
+  background: linear-gradient(45deg, rgba(76, 138, 231, 0.1), rgba(142, 84, 233, 0.1));
   border-radius: 16px;
   margin: 40px 0;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 24px rgba(76, 138, 231, 0.15);
+  border: none;
 
   &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    background: var(--sy-gradient-blue-purple);
+    content: none;
+    /* 移除边框 */
   }
 
   .integration-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding: 0 40px;
 
     .integration-text {
       flex: 1;
 
       p {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.6;
-        color: var(--vp-c-text-2);
-        margin-bottom: 20px;
+        color: var(--vp-c-text-1);
+        margin-bottom: 16px;
+        font-weight: 500;
+      }
+
+      p:first-child {
+        font-size: 24px;
+        font-weight: 700;
+        background-image: linear-gradient(135deg, #4a8af4, #9254de);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        display: inline-block;
+        margin-bottom: 8px;
       }
     }
 
     .integration-image {
       flex: 1;
 
-      .image-placeholder {
+      .fastemby-video {
         width: 100%;
-        height: 280px;
-        background-color: var(--vp-c-bg-mute);
+        max-height: 400px;
         border-radius: 12px;
-        border: 1px solid var(--vp-c-divider);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+        clip-path: inset(5px 0 0 0);
+        margin-top: -5px;
+      }
+
+      .copyright-disclaimer {
+        margin-top: 10px;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+
+        p {
+          font-size: 12px;
+          line-height: 1.4;
+          color: var(--vp-c-text-3);
+          text-align: center;
+          margin: 0;
+        }
       }
     }
   }
 
   .integration-list {
-    padding-left: 20px;
+    padding-left: 0;
+    margin-top: 24px;
 
     li {
-      margin-bottom: 12px;
-      color: var(--vp-c-text-2);
+      margin-bottom: 18px;
+      color: var(--vp-c-text-1);
       font-size: 16px;
       line-height: 1.6;
+      position: relative;
+      list-style-type: none;
+      padding-left: 30px;
+      background: linear-gradient(90deg, rgba(76, 138, 231, 0.05), transparent);
+      padding: 8px 12px 8px 36px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateX(5px);
+        background: linear-gradient(90deg, rgba(76, 138, 231, 0.1), transparent);
+      }
+
+      &:before {
+        content: '✓';
+        position: absolute;
+        left: 10px;
+        color: #42b983;
+        font-weight: bold;
+        font-size: 18px;
+      }
     }
   }
+}
+
+.section-title[data-text="与FastEmby完美配合"] {
+  margin-bottom: 30px;
+  background-image: linear-gradient(135deg, #4a8af4, #9254de);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-size: 34px;
+  position: relative;
 }
 
 .home-testimonials {
@@ -765,6 +1092,10 @@ onUnmounted(() => {
     box-shadow: 0 4px 16px var(--vp-c-shadow-1);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 200px;
 
     &:nth-child(3n+1)::after {
       content: '';
@@ -812,17 +1143,19 @@ onUnmounted(() => {
       color: var(--vp-c-text-2);
       margin-bottom: 16px;
       font-style: italic;
+      flex-grow: 1;
     }
 
     .testimonial-author {
       display: flex;
       flex-direction: column;
+      margin-top: auto;
 
       .author-name {
         font-weight: 600;
         font-size: 16px;
         color: transparent;
-        background-image: var(--sy-gradient-cyan-blue);
+        background-image: linear-gradient(135deg, #4a8af4, #9254de);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -929,25 +1262,121 @@ onUnmounted(() => {
     font-size: 28px;
   }
 
-  .home-showcase .showcase-row,
-  .home-showcase .showcase-row.reverse,
-  .home-integration .integration-content {
-    flex-direction: column;
+  .home-showcase-container {
+    padding: 40px 0;
+    min-height: auto;
+  }
 
-    .showcase-text,
-    .integration-text {
+  .home-showcase {
+    gap: 60px;
+  }
+
+  .showcase-section {
+    height: auto;
+    min-height: 75vh;
+    max-height: 85vh;
+    /* 限制最大高度，避免过长 */
+    padding: 20px 15px;
+    width: 95%;
+    overflow-y: auto;
+    /* 允许内容溢出时滚动 */
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* 确保内容分布均匀 */
+  }
+
+  .home-showcase .showcase-row,
+  .home-showcase .showcase-row.reverse {
+    flex-direction: column;
+    padding: 5px;
+    height: auto;
+
+    .showcase-text {
       padding: 0;
-      margin-bottom: 30px;
+      margin-bottom: 15px;
+      height: auto;
+      max-height: 40vh;
+      overflow-y: auto;
+
+      h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .content-subtitle {
+        font-size: 16px;
+      }
+
+      .content-points {
+        padding-left: 15px;
+
+        li {
+          font-size: 14px;
+          line-height: 1.4;
+          margin-bottom: 3px;
+        }
+      }
     }
 
     .showcase-image {
       padding: 0;
       width: 100%;
+      height: auto;
+      max-height: 35vh;
+      margin-top: auto;
+      flex-direction: column;
 
-      .showcase-img {
+      .showcase-img,
+      .showcase-video {
         max-width: 100%;
-        max-height: 400px;
+        max-height: 30vh;
         margin: 0 auto;
+      }
+
+      .copyright-disclaimer {
+        max-width: 100%;
+        margin-top: 5px;
+
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .showcase-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .showcase-nav {
+    position: fixed;
+    bottom: 20px;
+    top: auto;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 1000;
+  }
+
+  .showcase-dots {
+    flex-direction: row;
+    gap: 10px;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+
+    span {
+      width: 8px;
+      height: 8px;
+
+      &.active {
+        width: 10px;
+        height: 10px;
       }
     }
   }
@@ -967,15 +1396,24 @@ onUnmounted(() => {
     }
   }
 
-  .showcase-nav {
-    bottom: 20px;
-    top: auto;
-    right: 50%;
-    transform: translateX(50%);
-  }
+  /* 确保FastEmby集成部分的响应式 */
+  .home-integration .integration-content {
+    flex-direction: column;
 
-  .showcase-dots {
-    flex-direction: row;
+    .integration-text {
+      padding: 0;
+      margin-bottom: 30px;
+    }
+
+    .integration-image {
+      width: 100%;
+
+      .fastemby-video {
+        max-width: 100%;
+        max-height: 300px;
+        margin: 0 auto;
+      }
+    }
   }
 }
 

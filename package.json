@@ -5,8 +5,6 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "@mdi/font": "^7.4.47",
-    "vuetify": "^3.6.8",
     "vitepress": "^1.0.0-rc.45"
   }
 }
