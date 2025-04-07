@@ -137,38 +137,38 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const banner = '/SymediaWiki/assets/banner.jpg'
-const bannerMobile = '/SymediaWiki/assets/banner-mobile.png'
-const fastembyVideo = '/SymediaWiki/videos/fastemby演示.mp4'
+const banner = '/assets/banner.jpg'
+const bannerMobile = '/assets/banner-mobile.png'
+const fastembyVideo = '/videos/fastemby演示.mp4'
 
 const features = [
   {
-    icon: '/SymediaWiki/assets/icons/symlink.png',
+    icon: '/assets/icons/symlink.png',
     title: '链接同步',
     details: '支持多种同步方式，从115网盘自动同步媒体文件，生成STRM或软链接'
   },
   {
-    icon: '/SymediaWiki/assets/icons/archive.png',
+    icon: '/assets/icons/archive.png',
     title: '媒体归档',
     details: '智能识别媒体信息，自动分类整理，重命名文件，生成完整元数据'
   },
   {
-    icon: '/SymediaWiki/assets/icons/webhook.png',
+    icon: '/assets/icons/webhook.png',
     title: 'Webhook监控',
     details: '实时监控网盘变化，自动处理新增文件，支持多种通知工具'
   },
   {
-    icon: '/SymediaWiki/assets/icons/clouddrive.png',
+    icon: '/assets/icons/clouddrive.png',
     title: '多网盘支持',
     details: '支持115，123，阿里云盘，天翼云盘，夸克网盘等主流网盘'
   },
   {
-    icon: '/SymediaWiki/assets/icons/plugin.png',
+    icon: '/assets/icons/plugin.png',
     title: '插件支持',
     details: '内置多种插件，为日常观影提供更多便利'
   },
   {
-    icon: '/SymediaWiki/assets/icons/search.png',
+    icon: '/assets/icons/search.png',
     title: '聚合搜索',
     details: '多网盘聚合搜索，寻找资源更方便'
   }
@@ -193,7 +193,7 @@ const showcases = [
         ]
       }
     ],
-    image: '/SymediaWiki/assets/images/链接同步.jpg'
+    image: '/assets/images/链接同步.jpg'
   },
   {
     title: 'AI增强型媒体处理中枢',
@@ -222,7 +222,7 @@ const showcases = [
         ]
       }
     ],
-    image: '/SymediaWiki/assets/images/归档刮削.jpg'
+    image: '/assets/images/归档刮削.jpg'
   },
   {
     title: '自动化媒体管理流程',
@@ -237,7 +237,7 @@ const showcases = [
         ]
       }
     ],
-    image: '/SymediaWiki/assets/images/归档工作流.jpg'
+    image: '/assets/images/归档工作流.jpg'
   },
   {
     title: '生态化插件平台',
@@ -265,7 +265,7 @@ const showcases = [
         ]
       }
     ],
-    image: '/SymediaWiki/assets/images/生态化插件.jpg'
+    image: '/assets/images/生态化插件.jpg'
   },
   {
     title: '响应式布局：让设计适应每一个屏幕',
@@ -278,7 +278,7 @@ const showcases = [
         ]
       }
     ],
-    image: '/SymediaWiki/assets/images/响应式布局.jpg'
+    image: '/assets/images/响应式布局.jpg'
   },
   // {
   //   title: 'FastEmby无缝对接',

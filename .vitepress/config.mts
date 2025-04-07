@@ -3,7 +3,6 @@ import { set_sidebar } from "./utils/auto_sidebar.mjs";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: "/SymediaWiki/",
   lang: "zh-CN",
   title: "Symedia",
   description: "智能云端媒体库管家",
