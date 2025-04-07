@@ -20,7 +20,7 @@
     <div class="ui-padding">
       <!-- 核心功能介绍 -->
       <div class="home-intro">
-        <h2 class="section-title" data-text="专为网盘用户打造的自动化工具">专为网盘用户打造的自动化工具</h2>
+        <h2 class="section-title" data-text="专为媒体爱好者打造的自动化工具">专为媒体爱好者打造的自动化工具</h2>
         <p class="section-desc">Symedia是一款功能强大的媒体管理工具，支持115网盘、123网盘、阿里云盘、天翼云盘等主流网盘，Emby无缝连接，实现媒体文件的自动化管理</p>
       </div>
 
@@ -683,8 +683,8 @@ const handleScroll = () => {
 .home-intro .section-title {
   padding: 10px 16px;
   max-width: 100%;
-  word-break: keep-all;
-  white-space: nowrap;
+  word-break: break-word;
+  white-space: normal;
 }
 
 .home-features {
@@ -860,6 +860,7 @@ const handleScroll = () => {
   .showcase-text {
     flex: 1;
     padding: 0 30px;
+    width: 100%;
     height: 100%;
     overflow-y: auto;
     scrollbar-width: thin;
@@ -1303,7 +1304,7 @@ const handleScroll = () => {
       h3 {
         font-size: 24px;
         margin-bottom: 10px;
-        text-align: center;
+        /* text-align: center; */
       }
 
       .content-subtitle {
