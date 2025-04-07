@@ -8,6 +8,12 @@ export default defineConfig({
   title: "Symedia",
   description: "智能云端媒体库管家",
   head: [["link", { rel: "icon", href: "/favicon.png" }]],
+  vite: {
+    build: {
+      assetsInlineLimit: 0,
+    },
+    publicDir: "public",
+  },
   themeConfig: {
     siteTitle: " ",
     logo: { light: "/logo-light.png", dark: "/logo-dark.png" },

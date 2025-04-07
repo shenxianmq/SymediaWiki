@@ -27,6 +27,8 @@ jobs:
         run: pnpm install
       - name: Generate site
         run: pnpm docs:build
+      - name: Check build output
+        run: ls -la .vitepress/dist/
       - name: Deploy to server
         uses: appleboy/scp-action@v0.1.7
         with:
