@@ -6,7 +6,7 @@ export default defineConfig({
   lang: "zh-CN",
   title: "Symedia",
   description: "智能云端媒体库管家",
-  head: [["link", { rel: "icon", href: "/SymediaWiki/favicon.png" }]],
+  head: [["link", { rel: "icon", href: "/favicon.png" }]],
   vite: {
     build: {
       assetsInlineLimit: 0,
