@@ -1,2 +1,8 @@
-node_modules/
+node_modules
 .DS_Store
+dist
+dist-ssr
+cache
+.cache
+.temp
+*.local
