@@ -92,15 +92,19 @@
             </ul>
           </div>
           <div class="integration-image">
-            <video class="fastemby-video" controls preload="metadata">
-              <source :src="fastembyVideo" type="video/mp4">
-              您的浏览器不支持视频播放，请升级或更换浏览器
-            </video>
-            <div class="copyright-disclaimer">
-              <p>版权免责声明：此演示视频仅用于功能展示，所有媒体内容的版权归原作者所有。Symedia与FastEmby仅为技术工具，不提供、存储任何版权内容，不对用户使用行为负责。</p>
-            </div>
+            <img :src="fastembyImage" alt="功能展示" class="showcase-img">
           </div>
         </div>
+        <!-- <div class="integration-image">
+          <video class="fastemby-video" controls preload="metadata">
+            <source :src="fastembyVideo" type="video/mp4">
+            您的浏览器不支持视频播放，请升级或更换浏览器
+          </video>
+          <div class="copyright-disclaimer">
+            <p>版权免责声明：此演示视频仅用于功能展示，所有媒体内容的版权归原作者所有。Symedia与FastEmby仅为技术工具，不提供、存储任何版权内容，不对用户使用行为负责。</p>
+          </div>
+        </div>
+      </div> -->
       </div>
 
       <!-- 用户评价 -->
@@ -140,7 +144,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const banner = '/assets/banner.jpg'
 const bannerMobile = '/assets/banner-mobile.png'
 const fastembyVideo = '/videos/fastemby演示.mp4'
-
+const fastembyImage = '/assets/images/fastemby演示.png'
 const features = [
   {
     icon: '/assets/icons/symlink.png',
