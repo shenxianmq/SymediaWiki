@@ -48,7 +48,7 @@ shenxianmq/fastemby:latest
 ### 2.2 配置容器 config.yaml 文件
 
 - 文件路径：路径 1/config.yaml
-- 修改内容：<font style="color:rgb(32, 35, 43);background-color:rgb(243, 243, 244);">Emby</font><font style="background-color:rgb(253, 224, 71);">内网地址</font><font style="color:rgb(32, 35, 43);background-color:rgb(243, 243, 244);">，和</font><font style="color:rgb(32, 35, 43);background-color:#FBDE28;color:black;">FastEmby</font><font style="background-color:#FBDE28;color:black;">密钥</font>
+- 修改内容：Emby 内网地址，和 FastEmby 密钥
 - 保存后重启：<font style="background-color:#FBDE28;color:black;">重点！重启容器</font>
 
 ![](https://images.symedia.top/2025/04/08/20250408094449_a59071c4.png)
@@ -63,11 +63,11 @@ shenxianmq/fastemby:latest
 - 其他配置（图 3）：
 - 以上均搞定，保存配置，记得<font style="background-color:#FBDE28;color:black;">重启 FastEmby+Emby</font>
 
-![](https://images.symedia.top/2025/04/08/20250408094452_ab9787a0.png)
+![图1](https://images.symedia.top/2025/04/08/20250408094452_ab9787a0.png)
 
-![](https://images.symedia.top/2025/04/08/20250408094442_c5238082.png)
+![图2](https://images.symedia.top/2025/04/08/20250408094442_c5238082.png)
 
-![](https://images.symedia.top/2025/04/08/20250408094439_7a7612c0.png)
+![图3](https://images.symedia.top/2025/04/08/20250408094439_7a7612c0.png)
 
 ### 2.3 通过 Emby 客户端测试
 
