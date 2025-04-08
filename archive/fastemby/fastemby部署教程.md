@@ -12,7 +12,6 @@ FastEmby 可以帮助你，在 Emby 服务下，快速部署网盘的 302 模式
 
 ### 1.3 准备工作
 
-- Symedia 已安装：[https://www.huanhq.com/archives/Symedia-FastEmby](https://www.huanhq.com/archives/Symedia-FastEmby)
 - Emby 服务已安装：这个百度或者问 AI
 - 获取密钥的主要步骤
 
@@ -23,11 +22,11 @@ FastEmby 可以帮助你，在 Emby 服务下，快速部署网盘的 302 模式
   1. 步骤 1：获取 emby 的 api 密钥（具体方式，如下图）
   2. 步骤 2：私信开发者，获取<font style="background-color:#FBDE28;color:black;">fastemby 的密钥</font>
 
-![](/images/20250408094403_71fe00a6.png)
+![](https://images.symedia.top/2025/04/08/20250408094403_71fe00a6.png)
 
 ## 二、安装过程：
 
-![](/images/20250408094446_3e10ea1c.png)
+![](https://images.symedia.top/2025/04/08/20250408094446_3e10ea1c.png)
 
 ### 2.1 容器安装
 
@@ -51,7 +50,7 @@ shenxianmq/fastemby:latest
 - 修改内容：Emby 内网地址，和 FastEmby 密钥
 - 保存后重启：<font style="background-color:#FBDE28;color:black;">重点！重启容器</font>
 
-![](/images/20250408094449_a59071c4.png)
+![](https://images.symedia.top/2025/04/08/20250408094449_a59071c4.png)
 
 ### 2.3 配置 FastEmby
 
@@ -63,11 +62,11 @@ shenxianmq/fastemby:latest
 - 其他配置（图 3）：
 - 以上均搞定，保存配置，记得<font style="background-color:#FBDE28;color:black;">重启 FastEmby+Emby</font>
 
-![图1](/images/20250408094452_ab9787a0.png)
+![图1](https://images.symedia.top/2025/04/08/20250408094452_ab9787a0.png)
 
-![图2](/images/20250408094442_c5238082.png)
+![图2](https://images.symedia.top/2025/04/08/20250408094442_c5238082.png)
 
-![图3](/images/20250408094439_7a7612c0.png)
+![图3](https://images.symedia.top/2025/04/08/20250408094439_7a7612c0.png)
 
 ### 2.3 通过 Emby 客户端测试
 
