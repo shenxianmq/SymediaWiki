@@ -25,7 +25,7 @@
   </div>
 
   <div class="qrcode-container">
-    <img src="http://images.symedia.top/2025/04/08/wechat.png" alt="微信支付" class="qrcode">
+    <img src="/wechat.png" alt="微信支付" class="qrcode">
     <p class="qrcode-label">微信支付</p>
   </div>
 </div>
