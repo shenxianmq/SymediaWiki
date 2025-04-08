@@ -42,6 +42,10 @@ export default defineConfig({
         items: [
           { text: "Symedia", link: "/archive/symedia/symedia部署教程" },
           { text: "FastEmby", link: "/archive/fastemby/fastemby部署教程" },
+          {
+            text: "第三方教程",
+            link: "/archive/第三方教程/Symedia + FastEmby：Emby 115 直链神器",
+          },
         ],
       },
       { text: "捐赠", link: "/donate" },
@@ -64,6 +68,13 @@ export default defineConfig({
           text: "FastEmby",
           collapsed: false,
           items: set_sidebar("/archive/fastemby"),
+        },
+      ],
+      "/archive/第三方教程/": [
+        {
+          text: "第三方教程",
+          collapsed: false,
+          items: set_sidebar("/archive/第三方教程"),
         },
       ],
     },
