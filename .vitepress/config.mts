@@ -6,7 +6,7 @@ export default defineConfig({
   lang: "zh-CN",
   title: "Symedia",
   description: "智能云端媒体库管家",
-  head: [["link", { rel: "icon", href: "/favicon.png" }]],
+  head: [["link", { rel: "icon", href: "/assets/icons/favicon.png" }]],
   vite: {
     build: {
       assetsInlineLimit: 0,
@@ -34,6 +34,7 @@ export default defineConfig({
           { text: "FastEmby", link: "/archive/fastemby/fastemby部署教程" },
         ],
       },
+      { text: "捐赠", link: "/donate" },
     ],
     outlineTitle: "目录",
     outline: [2, 6],

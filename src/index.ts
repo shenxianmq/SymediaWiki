@@ -14,7 +14,7 @@ export default {
     });
   },
   enhanceApp({ app, router, siteData }) {
-    app.component("customHome", Home);
+    app.component("Home", Home);
     // ...
   },
 } satisfies Theme;

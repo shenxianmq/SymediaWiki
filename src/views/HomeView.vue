@@ -12,7 +12,7 @@
       </div>
       <div class="hero-actions" style="margin-top: 20px;">
         <a class="action-button primary" href="/guide/getting-started">立即开始</a>
-        <!-- <a class="action-button secondary" href="/download">下载软件</a> -->
+        <a class="action-button secondary" href="/donate">下载软件</a>
       </div>
       <p class="hero-note">只是一款自动化工具，不提供任何资源</p>
     </div>
