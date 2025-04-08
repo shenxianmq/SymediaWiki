@@ -10,9 +10,9 @@ docker 项目地址：
 
 Sa 的归档轮询监控主要依托于 CloudDrive2,即 cd2,而 cd2 的挂载的标准方法如下:
 
-![](http://images.symedia.top/2025/04/06/20250406231003982.png)
+![](https://images.symedia.top/2025/04/06/20250406231003982.png)
 
-![](http://images.symedia.top/2025/04/06/20250406231058061.png)
+![](https://images.symedia.top/2025/04/06/20250406231058061.png)
 
 最终你的 115 路径应该是/CloudNAS/CloudDrive/115,很多人第一次用 cd2 的时候进行了错误挂载，即/CloudNAS/115,这样会导致一个问题，就是当你的 cd2 重启或者掉盘的时候，你的其他容器无法访问到 cd2 挂载文件夹，必须重启才可以，所以在部署 Sa 前必须先检查一下挂载是否正确
 
@@ -59,14 +59,14 @@ LICENSE_KEY: ## 激活码，注意冒号后面有空格
 ### 登录
 
 部署后输入 ip:8095 就可以进入登录界面了,初始账号密码为 admin password
-![](http://images.symedia.top/2025/04/06/20250406231457183.png)
+![](https://images.symedia.top/2025/04/06/20250406231457183.png)
 
 ### 一些必要的设置
 
 #### http 代理
 
 如下图，登录成功后，先去设置-全局设置中，设置好 http 代理，否则会无法使用 bot 功能，和归档识别功能
-![](http://images.symedia.top/2025/04/06/20250406231648215.png)
+![](https://images.symedia.top/2025/04/06/20250406231648215.png)
 
 #### 监控检测
 
@@ -76,7 +76,7 @@ LICENSE_KEY: ## 激活码，注意冒号后面有空格
 /mnt/CloudNAS/CloudDrive2/115/我的接收/监控测试
 ```
 
-![](http://images.symedia.top/2025/04/06/20250406231718774.png)
+![](https://images.symedia.top/2025/04/06/20250406231718774.png)
 
 ## 常见问题
 
