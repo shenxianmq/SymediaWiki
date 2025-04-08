@@ -6,7 +6,17 @@ export default defineConfig({
   lang: "zh-CN",
   title: "Symedia",
   description: "智能云端媒体库管家",
-  head: [["link", { rel: "icon", href: "/assets/icons/favicon.png" }]],
+  head: [
+    ["link", { rel: "icon", href: "/assets/icons/favicon.png" }],
+    ["script", { src: "/medium-zoom.js" }],
+  ],
+  markdown: {
+    // 链接添加 target="_blank" 属性
+    externalLinks: {
+      target: "_blank",
+      rel: "noopener noreferrer",
+    },
+  },
   vite: {
     build: {
       assetsInlineLimit: 0,

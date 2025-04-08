@@ -6,7 +6,8 @@ import "./style.css";
 import Home from "./views/HomeView.vue";
 import "./styles/tailwind.css";
 
-export default {
+// 定义主题扩展
+const theme = {
   extends: DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
@@ -14,7 +15,9 @@ export default {
     });
   },
   enhanceApp({ app, router, siteData }) {
+    // 注册全局组件
     app.component("Home", Home);
-    // ...
   },
 } satisfies Theme;
+
+export default theme;

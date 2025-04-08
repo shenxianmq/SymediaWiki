@@ -138,7 +138,35 @@
 }
 
 
-/*文章图片大小*/
+/*文章图片大小和点击放大样式*/
 .VPDoc .content img {
   max-width: 80% !important;
+  cursor: zoom-in;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  display: block;
+  margin: 1rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 移动端适配 */
+@media (max-width: 640px) {
+  .VPDoc .content img {
+    max-width: 100% !important;
+  }
+}
+
+/* Medium Zoom 相关样式 */
+.medium-zoom-overlay {
+  z-index: 100;
+  background-color: var(--vp-c-bg) !important;
+  opacity: 0.95 !important;
+}
+
+.medium-zoom-image {
+  z-index: 101;
+}
+
+.medium-zoom-image--opened {
+  cursor: zoom-out !important;
 }
