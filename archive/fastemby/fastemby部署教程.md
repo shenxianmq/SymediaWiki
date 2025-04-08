@@ -4,13 +4,7 @@
 
 FastEmby 可以帮助你，在 Emby 服务下，快速部署网盘的 302 模式；302 模式可以让<font style="background-color:#FBDE28;color:black;">你在家以外的网络环境</font>，<font style="background-color:#FBDE28;color:black;">满速访问网盘内的资源</font>，不再受限于家庭带宽的上行速度；
 
-### 1.2 官方参考文档
-
-老版本文档（部分操作无 UI 界面）：[https://great-willow-cc0.notion.site/FastEmby-14c017c1f53f80fca6a0f66a967718e3](https://great-willow-cc0.notion.site/FastEmby-14c017c1f53f80fca6a0f66a967718e3)
-
-新版本文档（主要操作有 UI 界面）：[https://www.huanhq.com/archives/FastEmby2.0](https://www.huanhq.com/archives/FastEmby2.0)
-
-### 1.3 准备工作
+### 1.2 准备工作
 
 - Emby 服务已安装：这个百度或者问 AI
 - 获取密钥的主要步骤
