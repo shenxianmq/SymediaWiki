@@ -4,7 +4,7 @@ import { set_sidebar } from "./utils/auto_sidebar.mjs";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: "zh-CN",
-  title: "Symedia",
+  title: "Symedia 官方社区",
   description: "智能云端媒体库管家",
   head: [
     ["link", { rel: "icon", href: "/assets/icons/favicon.png" }],
