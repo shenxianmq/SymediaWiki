@@ -1,8 +1,14 @@
 # Symedia 部署教程
 
-注：Symedia 以下简称 “SA” 或 “sa”
+<span style="border-left: 3px solid orange; padding-left: 10px;">注：Symedia 以下简称 "SA" 或 "sa"
+</span>
 
-docker 项目地址：
+## 前期准备
+
+**激活码**：
+
+- 如果已经购买激活码，可以直接部署。
+- 如果未购买，点击右上角捐赠按钮，捐赠后会获得激活码一枚
 
 ## 前置工作
 
