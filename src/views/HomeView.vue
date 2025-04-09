@@ -475,8 +475,44 @@ onMounted(() => {
   // 添加滚动事件监听器，用于控制导航点的显示和隐藏
   window.addEventListener('scroll', handleScroll)
 
-  // 添加图片加载后的对齐处理
-  setTimeout(alignTextWithImages, 500)
+  // 预加载所有图片，然后再执行对齐操作
+  const preloadImages = () => {
+    const images = document.querySelectorAll('.showcase-img')
+    let loadedCount = 0
+    const totalImages = images.length
+
+    if (totalImages === 0) {
+      // 如果没有图片，直接执行对齐
+      alignTextWithImages()
+      return
+    }
+
+    images.forEach(img => {
+      if (img.complete) {
+        loadedCount++
+        if (loadedCount === totalImages) {
+          alignTextWithImages()
+        }
+      } else {
+        img.onload = () => {
+          loadedCount++
+          if (loadedCount === totalImages) {
+            alignTextWithImages()
+          }
+        }
+      }
+    })
+
+    // 设置一个兜底的计时器，确保即使某些图片加载失败也能执行对齐
+    setTimeout(() => {
+      alignTextWithImages()
+    }, 1000)
+  }
+
+  // 执行预加载
+  preloadImages()
+
+  // 添加窗口尺寸变化时的对齐处理
   window.addEventListener('resize', alignTextWithImages)
 
   // 在任何异步操作之前注册 onUnmounted 钩子
@@ -586,20 +622,38 @@ const handleScroll = () => {
 const alignTextWithImages = () => {
   const showcaseSections = document.querySelectorAll('.showcase-section')
   showcaseSections.forEach(section => {
+    // 为每个区域添加加载状态标记
+    section.classList.add('showcase-content-loading')
+    section.classList.remove('showcase-content-loaded')
+
     const imageContainer = section.querySelector('.showcase-image')
     const textContainer = section.querySelector('.showcase-text')
     const image = imageContainer.querySelector('.showcase-img, .showcase-video')
 
     if (imageContainer && textContainer && image) {
+      // 在图片加载前，先设置一个默认的顶部对齐
+      textContainer.style.paddingTop = '0px'
+
       // 等待图片完全加载
       if (image instanceof HTMLImageElement) {
         if (!image.complete) {
-          image.onload = () => alignSingleSection(imageContainer, textContainer)
+          image.onload = () => {
+            alignSingleSection(imageContainer, textContainer)
+            // 加载完毕后标记内容已加载
+            section.classList.remove('showcase-content-loading')
+            section.classList.add('showcase-content-loaded')
+          }
         } else {
           alignSingleSection(imageContainer, textContainer)
+          // 图片已加载完毕，直接标记
+          section.classList.remove('showcase-content-loading')
+          section.classList.add('showcase-content-loaded')
         }
       } else {
         alignSingleSection(imageContainer, textContainer)
+        // 非图片类型，直接标记
+        section.classList.remove('showcase-content-loading')
+        section.classList.add('showcase-content-loaded')
       }
     }
   })
@@ -607,7 +661,12 @@ const alignTextWithImages = () => {
 
 // 对齐单个区域的文字和图片
 const alignSingleSection = (imageContainer, textContainer) => {
-  if (window.innerWidth <= 768) return // 移动端不需要特殊对齐
+  if (window.innerWidth <= 768) {
+    // 移动端直接显示，不需要特殊对齐
+    textContainer.style.paddingTop = '0px'
+    textContainer.style.paddingBottom = '0px'
+    return
+  }
 
   const image = imageContainer.querySelector('.showcase-img, .showcase-video')
 
@@ -638,6 +697,16 @@ const alignSingleSection = (imageContainer, textContainer) => {
   margin: 0 auto;
   max-width: 1152px;
   color: var(--vp-c-text-1);
+}
+
+/* 添加内容预加载样式 */
+.showcase-content-loading .showcase-text {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.showcase-content-loaded .showcase-text {
+  opacity: 1;
 }
 
 .section-title {
