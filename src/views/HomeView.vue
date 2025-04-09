@@ -475,6 +475,10 @@ onMounted(() => {
   // 添加滚动事件监听器，用于控制导航点的显示和隐藏
   window.addEventListener('scroll', handleScroll)
 
+  // 添加图片加载后的对齐处理
+  setTimeout(alignTextWithImages, 500)
+  window.addEventListener('resize', alignTextWithImages)
+
   // 在任何异步操作之前注册 onUnmounted 钩子
   let observerInstance = null
   let resizeObserverInstance = null
@@ -492,6 +496,7 @@ onMounted(() => {
     window.removeEventListener('touchstart', handleTouchStart)
     window.removeEventListener('touchend', handleTouchEnd)
     window.removeEventListener('scroll', handleScroll)
+    window.removeEventListener('resize', alignTextWithImages)
   })
 
   // 等待Vue完成DOM更新
@@ -574,6 +579,55 @@ const handleScroll = () => {
     showcaseNav.classList.add('visible')
   } else {
     showcaseNav.classList.remove('visible')
+  }
+}
+
+// 新增函数：图片与文字对齐
+const alignTextWithImages = () => {
+  const showcaseSections = document.querySelectorAll('.showcase-section')
+  showcaseSections.forEach(section => {
+    const imageContainer = section.querySelector('.showcase-image')
+    const textContainer = section.querySelector('.showcase-text')
+    const image = imageContainer.querySelector('.showcase-img, .showcase-video')
+
+    if (imageContainer && textContainer && image) {
+      // 等待图片完全加载
+      if (image instanceof HTMLImageElement) {
+        if (!image.complete) {
+          image.onload = () => alignSingleSection(imageContainer, textContainer)
+        } else {
+          alignSingleSection(imageContainer, textContainer)
+        }
+      } else {
+        alignSingleSection(imageContainer, textContainer)
+      }
+    }
+  })
+}
+
+// 对齐单个区域的文字和图片
+const alignSingleSection = (imageContainer, textContainer) => {
+  if (window.innerWidth <= 768) return // 移动端不需要特殊对齐
+
+  const image = imageContainer.querySelector('.showcase-img, .showcase-video')
+
+  if (image) {
+    // 计算图片容器中图片的垂直居中偏移量
+    const imageTopOffset = (imageContainer.clientHeight - image.clientHeight) / 2 - 12
+
+    // 设置文字容器的样式，确保与图片区域对齐
+    textContainer.style.paddingTop = `${imageTopOffset}px`
+
+    // 计算文字容器内容的高度
+    const textContentHeight = textContainer.scrollHeight - imageTopOffset
+
+    // 如果文字内容高度小于图片高度，添加底部填充使其至少与图片一样高
+    if (textContentHeight < image.clientHeight) {
+      const paddingBottom = image.clientHeight - textContentHeight
+      textContainer.style.paddingBottom = `${Math.max(0, paddingBottom)}px`
+    } else {
+      textContainer.style.paddingBottom = '0px'
+    }
   }
 }
 </script>
@@ -920,7 +974,7 @@ const handleScroll = () => {
   .showcase-image {
     flex: 1.5;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding: 10px;
     height: 100%;
