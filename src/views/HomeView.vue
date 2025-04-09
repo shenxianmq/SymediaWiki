@@ -899,7 +899,7 @@ const handleScroll = () => {
       font-size: 18px;
       font-weight: 600;
       margin-bottom: 6px;
-      color: #5bc3e3;
+      color: #496ece;
       display: block;
     }
 

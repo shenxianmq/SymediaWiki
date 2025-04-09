@@ -13,8 +13,8 @@
   --sy-gradient-hot: linear-gradient(135deg, #ff3a6e 0%, #ff7f59 100%);
   
   /* 图片中的青色到蓝色文字渐变 */
-  /* --sy-gradient-cyan-blue: linear-gradient(90deg, #00ffcc 0%, #108eff 100%); */
-    --sy-gradient-cyan-blue: linear-gradient(90deg, #5795f7 0%, #5351f6 100%);
+  --sy-gradient-cyan-blue: linear-gradient(90deg, #22e7bf 0%, #108eff 100%);
+  /* --sy-gradient-cyan-blue: linear-gradient(90deg, #5795f7 0%, #5351f6 100%); */
   --vp-nav-logo-height: 30px;
   /* 文本颜色已经在VitePress中定义，使用其变量 */
   /* --vp-c-text-1: 主要文本 */
