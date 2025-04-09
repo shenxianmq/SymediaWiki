@@ -31,8 +31,8 @@ export default defineConfig({
   themeConfig: {
     siteTitle: " ",
     logo: {
-      light: "logo-light.png",
-      dark: "logo-dark.png",
+      light: "/logo-light.png",
+      dark: "/logo-dark.png",
     },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
