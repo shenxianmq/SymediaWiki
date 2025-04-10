@@ -226,7 +226,7 @@ const showcases = [
         ]
       }
     ],
-    image: '/assets/images/归档刮削.png'
+    image: '/assets/images/AI.png'
   },
   {
     title: '自动化媒体管理流程',
