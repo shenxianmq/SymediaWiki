@@ -51,6 +51,9 @@ export default defineConfig({
 
     //返回顶部文字修改(移动端)
     returnToTopLabel: "返回顶部",
+    //手机端深浅模式文字修改
+    darkModeSwitchLabel: "主题模式",
+
     sidebar: {
       "/archive/symedia/": [
         {

@@ -197,7 +197,7 @@ const showcases = [
         ]
       }
     ],
-    image: '/assets/images/链接同步.jpg'
+    image: '/assets/images/链接同步.png'
   },
   {
     title: 'AI增强型媒体处理中枢',
@@ -226,7 +226,7 @@ const showcases = [
         ]
       }
     ],
-    image: '/assets/images/归档刮削.jpg'
+    image: '/assets/images/归档刮削.png'
   },
   {
     title: '自动化媒体管理流程',
@@ -241,7 +241,7 @@ const showcases = [
         ]
       }
     ],
-    image: '/assets/images/归档工作流.jpg'
+    image: '/assets/images/归档工作流.png'
   },
   {
     title: '生态化插件平台',
@@ -269,7 +269,7 @@ const showcases = [
         ]
       }
     ],
-    image: '/assets/images/生态化插件.jpg'
+    image: '/assets/images/生态化插件.png'
   },
   {
     title: '响应式布局：让设计适应每一个屏幕',
@@ -282,7 +282,7 @@ const showcases = [
         ]
       }
     ],
-    image: '/assets/images/响应式布局.jpg'
+    image: '/assets/images/响应式布局.png'
   },
   // {
   //   title: 'FastEmby无缝对接',
@@ -672,7 +672,7 @@ const alignSingleSection = (imageContainer, textContainer) => {
 
   if (image) {
     // 计算图片容器中图片的垂直居中偏移量
-    const imageTopOffset = (imageContainer.clientHeight - image.clientHeight) / 2 - 12
+    const imageTopOffset = (imageContainer.clientHeight - image.clientHeight) / 2 + 15
 
     // 设置文字容器的样式，确保与图片区域对齐
     textContainer.style.paddingTop = `${imageTopOffset}px`
