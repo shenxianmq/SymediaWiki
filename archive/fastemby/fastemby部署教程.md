@@ -25,7 +25,7 @@ FastEmby 可以帮助你，在 Emby 服务下，快速部署网盘的 302 模式
 
 ![](https://images.symedia.top/2025/04/08/20250408094403_71fe00a6.png)
 
-## 二、安装过程：
+## 二、安装过程
 
 ![](https://images.symedia.top/2025/04/08/20250408094446_3e10ea1c.png)
 
@@ -74,4 +74,4 @@ shenxianmq/fastemby:latest
 - 端口号：ip+8098(注意，<font style="background-color:#FBDE28;color:black;">这是一个新的端口号</font>，以后需要 302 模式，都要用这个端口)；Emby 账号密码不变；
 - 通过 5g 信号测试播放速度，速度大于家庭宽带上行即配置成功
   - 注意事项 1：iso 文件播放会卡顿，并且造成 cookie 失效
-  - 注意事项 2：<font style="background-color:#FBDE28;color:black;">长时间视频无法加载，请检查日志</font>，有可能是 cookie 失效，请跟换 cookie
+  - 注意事项 2：<font style="background-color:#FBDE28;color:black;">长时间视频无法加载，请检查日志</font>，有可能是 cookie 失效，请更换 cookie

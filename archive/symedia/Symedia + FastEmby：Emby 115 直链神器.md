@@ -62,9 +62,9 @@
 
 ### 1\. CloudDrive2
 
-#### 1.1 Docker CLI:
+#### 1.1 Docker CLI
 
-#### 1.2 Docker Compose:
+#### 1.2 Docker Compose
 
 ```yaml
 version: "3"
@@ -97,9 +97,9 @@ services:
 
 ### 2\. Symedia
 
-#### 2.1 Docker CLI:
+#### 2.1 Docker CLI
 
-#### 2.2 Docker Compose:
+#### 2.2 Docker Compose
 
 ```yaml
 version: "3"
@@ -128,9 +128,9 @@ services:
 
 ### 3\. FastEmby
 
-#### 3.1 Docker CL:
+#### 3.1 Docker CL
 
-#### 3.2 Docker Compose:
+#### 3.2 Docker Compose
 
 ```yaml
 version: "3"
@@ -156,9 +156,9 @@ services:
 
 ### 4\. Emby
 
-#### 4.1 Docker CLI:
+#### 4.1 Docker CLI
 
-#### 4.2 Docker Composer:
+#### 4.2 Docker Composer
 
 ```yaml
 version: "3"

@@ -272,10 +272,10 @@ const showcases = [
     image: '/assets/images/生态化插件.png'
   },
   {
-    title: '响应式布局：让设计适应每一个屏幕',
+    title: '响应式布局',
     content: [
       {
-        subtitle: '智能响应式设计',
+        subtitle: '让设计适应每一个屏幕',
         points: [
           '让网页能够智能识别设备屏幕尺寸，自动调整内容排版、图片大小及功能交互',
           '内容始终清晰可读，操作触手可及，移动端添加快捷方式到桌面，实现APP级交互体验'
@@ -356,6 +356,7 @@ const checkIsMobile = () => {
 
 const currentShowcase = ref(0)
 const isScrolling = ref(false)
+const scrollLock = ref(false) // 添加滚动锁定状态
 
 // 添加触摸事件支持
 const touchStartY = ref(0)
@@ -369,6 +370,9 @@ const handleTouchStart = (event) => {
 
 // 处理触摸结束事件
 const handleTouchEnd = (event) => {
+  // 如果滚动锁定，直接返回
+  if (scrollLock.value) return
+
   // 仅在showcase区域内处理
   const showcaseContainer = document.querySelector('.home-showcase-container')
   if (!showcaseContainer) return
@@ -387,6 +391,11 @@ const handleTouchEnd = (event) => {
   if (Math.abs(deltaY) > touchThreshold) {
     // 防止触发默认的页面滚动
     event.preventDefault()
+
+    // 设置滚动锁定
+    scrollLock.value = true
+    setTimeout(() => { scrollLock.value = false }, 1200) // 滚动锁定时间比防抖长
+
     isScrolling.value = true
     setTimeout(() => { isScrolling.value = false }, 800) // 防抖
 
@@ -402,6 +411,9 @@ const handleTouchEnd = (event) => {
 
 // 处理滚轮事件
 const handleWheel = (event) => {
+  // 如果滚动锁定，直接返回
+  if (scrollLock.value) return
+
   // 仅在showcase区域内处理
   const showcaseContainer = document.querySelector('.home-showcase-container')
   if (!showcaseContainer) return
@@ -413,6 +425,10 @@ const handleWheel = (event) => {
   )
 
   if (!isInViewport || isScrolling.value) return
+
+  // 设置滚动锁定
+  scrollLock.value = true
+  setTimeout(() => { scrollLock.value = false }, 1200) // 滚动锁定时间比防抖长
 
   isScrolling.value = true
   setTimeout(() => { isScrolling.value = false }, 800) // 防抖

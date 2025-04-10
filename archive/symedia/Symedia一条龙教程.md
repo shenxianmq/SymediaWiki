@@ -27,7 +27,7 @@ CloudDrive2 挂载路径
 
 ## Symedia 配置指南
 
-### **Cookie 配置**：
+### **Cookie 配置**
 
 - 需要留空两个 Cookie：
   - **CloudDrive2**：用于挂载路径。
