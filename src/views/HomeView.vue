@@ -672,7 +672,7 @@ const alignSingleSection = (imageContainer, textContainer) => {
 
   if (image) {
     // 计算图片容器中图片的垂直居中偏移量
-    const imageTopOffset = (imageContainer.clientHeight - image.clientHeight) / 2 + 15
+    const imageTopOffset = (imageContainer.clientHeight - image.clientHeight) / 2 - 12
 
     // 设置文字容器的样式，确保与图片区域对齐
     textContainer.style.paddingTop = `${imageTopOffset}px`

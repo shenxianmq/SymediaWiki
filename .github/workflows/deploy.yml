@@ -72,7 +72,7 @@ jobs:
           message: |
             🎉 SymediaWiki 部署成功！
 
-            🔗 访问地址: https://shenxianmq.github.io/
+            🔗 访问地址: https://www.symedia.top/
             📅 部署时间: ${{ github.event.head_commit.timestamp }}
             📝 提交信息: ${{ github.event.head_commit.message }}
             👤 提交者: ${{ github.event.head_commit.author.name }}
