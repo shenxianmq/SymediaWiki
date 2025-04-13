@@ -56,8 +56,8 @@ volumes:
   - /vol1/1000/DATA/AppData/symedia/config:/app/config ## sa配置文件夹
   - /var/run/docker.sock:/var/run/docker.sock:ro ## Docker 宿主机通信
 environment:
-TZ: Asia/Shanghai ## 容器时区
-LICENSE_KEY: ## 激活码，注意冒号后面有空格
+  TZ: Asia/Shanghai ## 容器时区
+  LICENSE_KEY: ## 激活码，注意冒号后面有空格
 ```
 
 ## 初始设置

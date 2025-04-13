@@ -31,14 +31,42 @@ FastEmby 可以帮助你，在 Emby 服务下，快速部署网盘的 302 模式
 
 ### 2.1 容器安装
 
+#### Docker CLI
+
 ```plain
 docker run -d \
 --name FastEmby \
 -e TZ=Asia/Shanghai \
+-e LICENSE=eyj89j9fjrfkr9fpi
 -v /volume1/docker/FastEmby/config:/app/config \
 -v /volume1/docker/FastEmby/log:/app/log \
 --network host \
 shenxianmq/fastemby:latest
+```
+
+#### Docker Compose
+
+```plain
+version: "3"
+
+services:
+  FastEmby:
+    image: shenxianmq/fastemby:latest # 使用最新镜像
+    container_name: FastEmby # 容器名称
+    restart: unless-stopped # 重启策略
+    network_mode: host # 网络模式
+    deploy:
+      resources:
+        limits:
+          cpus: "1" # 限制容器最多使用 1 个 CPU
+          memory: 1G # 限制容器最多使用 1GB 内存
+    environment:
+      - TZ=Asia/Shanghai # 环境变量：容器时区
+      - CHECKIN=0 # 关闭 115 自动签名
+      - LICENSE_KEY=eyj89j9fjrfkr9fpi #Symedia激活码
+    volumes:
+      - /volume1/FastEmby/config:/app/config # 映射 配置文件夹
+      - /volume1/FastEmby/log:/app/log # 映射 日志文件夹
 ```
 
 注意：路径 1 和路径 2 需要自己在本地创建，可以自定义
