@@ -55,11 +55,6 @@ services:
     container_name: FastEmby # 容器名称
     restart: unless-stopped # 重启策略
     network_mode: host # 网络模式
-    deploy:
-      resources:
-        limits:
-          cpus: "1" # 限制容器最多使用 1 个 CPU
-          memory: 1G # 限制容器最多使用 1GB 内存
     environment:
       TZ: Asia/Shanghai # 环境变量：容器时区
       CHECKIN: 0 # 关闭 115 自动签名
