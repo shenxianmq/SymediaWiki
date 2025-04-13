@@ -50,8 +50,8 @@ services:
       - /volume1/docker/symedia/config:/app/config # sa配置文件夹
       - /var/run/docker.sock:/var/run/docker.sock:ro # Docker 宿主机通信
     environment:
-      TZ: Asia/Shanghai # 容器时区
-      LICENSE_KEY: "" #秘钥
+      - TZ=Asia/Shanghai # 容器时区
+      - LICENSE_KEY=eyj89j9fjrfkr9fpi #秘钥
 ```
 
 - 创建 symedia 配置文件夹

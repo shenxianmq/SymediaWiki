@@ -46,7 +46,7 @@ shenxianmq/fastemby:latest
 
 #### Docker Compose
 
-```plain
+```yaml
 version: "3"
 
 services:
@@ -56,9 +56,9 @@ services:
     restart: unless-stopped # 重启策略
     network_mode: host # 网络模式
     environment:
-      TZ: Asia/Shanghai # 环境变量：容器时区
-      CHECKIN: 0 # 关闭 115 自动签名
-      LICENSE_KEY: eyj89j9fjrfkr9fpi #Symedia激活码
+      - TZ=Asia/Shanghai # 环境变量：容器时区
+      - CHECKIN=0 # 关闭 115 自动签名
+      - LICENSE_KEY=eyj89j9fjrfkr9fpi #Symedia激活码
     volumes:
       - /volume1/FastEmby/config:/app/config # 映射 配置文件夹
       - /volume1/FastEmby/log:/app/log # 映射 日志文件夹
