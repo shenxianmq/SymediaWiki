@@ -45,19 +45,19 @@ shenxianmq/symedia:latest
 ```shell
 version: '3.8'
 services:
-symedia:
-image: shenxianmq/symedia:latest ## 拉取最新镜像
-container_name: symedia ## 容器名称
-restart: always ## 重启策略
-ports: - "8095:8095" ## 映射端口：主机 8095 -> 容器 8095
-volumes:
-  - /volume1/CloudNAS/:/CloudNAS:rslave ## cd2映射路径
-  - /volume1/media:/media ## 本地媒体目录，检查路径外的映射和链接同步的目录路径以及大小写是否一致
-  - /vol1/1000/DATA/AppData/symedia/config:/app/config ## sa配置文件夹
-  - /var/run/docker.sock:/var/run/docker.sock:ro ## Docker 宿主机通信
-environment:
-  TZ: Asia/Shanghai ## 容器时区
-  LICENSE_KEY: ## 激活码，注意冒号后面有空格
+  symedia:
+  image: shenxianmq/symedia:latest ## 拉取最新镜像
+  container_name: symedia ## 容器名称
+  restart: always ## 重启策略
+  ports: - "8095:8095" ## 映射端口：主机 8095 -> 容器 8095
+  volumes:
+    - /volume1/CloudNAS/:/CloudNAS:rslave ## cd2映射路径
+    - /volume1/media:/media ## 本地媒体目录，检查路径外的映射和链接同步的目录路径以及大小写是否一致
+    - /vol1/1000/DATA/AppData/symedia/config:/app/config ## sa配置文件夹
+    - /var/run/docker.sock:/var/run/docker.sock:ro ## Docker 宿主机通信
+  environment:
+    TZ: Asia/Shanghai ## 容器时区
+    LICENSE_KEY: eyj89j9fjrfkr9fpi ## 激活码，注意冒号后面有空格
 ```
 
 ## 初始设置

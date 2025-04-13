@@ -61,9 +61,9 @@ services:
           cpus: "1" # 限制容器最多使用 1 个 CPU
           memory: 1G # 限制容器最多使用 1GB 内存
     environment:
-      - TZ=Asia/Shanghai # 环境变量：容器时区
-      - CHECKIN=0 # 关闭 115 自动签名
-      - LICENSE_KEY=eyj89j9fjrfkr9fpi #Symedia激活码
+      TZ: Asia/Shanghai # 环境变量：容器时区
+      CHECKIN: 0 # 关闭 115 自动签名
+      LICENSE_KEY: eyj89j9fjrfkr9fpi #Symedia激活码
     volumes:
       - /volume1/FastEmby/config:/app/config # 映射 配置文件夹
       - /volume1/FastEmby/log:/app/log # 映射 日志文件夹
