@@ -44,12 +44,14 @@ shenxianmq/symedia:latest
 
 ```shell
 version: '3.8'
+
 services:
   symedia:
   image: shenxianmq/symedia:latest ## 拉取最新镜像
   container_name: symedia ## 容器名称
   restart: always ## 重启策略
-  ports: - "8095:8095" ## 映射端口：主机 8095 -> 容器 8095
+  ports:
+    - "8095:8095" ## 映射端口：主机 8095 -> 容器 8095
   volumes:
     - /volume1/CloudNAS/:/CloudNAS:rslave ## cd2映射路径
     - /volume1/media:/media ## 本地媒体目录，检查路径外的映射和链接同步的目录路径以及大小写是否一致
