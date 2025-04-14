@@ -131,7 +131,7 @@ webhook 监控
 
 不能直接下载 webhook.toml，则下载 zip 文件解压
 
-最新版 CloudDrive2 可以直接在网页中添加 webhook 配置，新建 webhook 后，将下列代码粘贴进去，修改 base_url 为自己的 sa 实际 IP 地址
+> 最新版 CloudDrive2 可以直接在网页中添加 webhook 配置，新建 webhook 后，将下列代码粘贴进去，修改 base_url 为自己的 sa 实际 IP 地址
 
 ![](https://images.symedia.top/2025/04/14/20250414164133_eb3878b4.png)
 
