@@ -740,7 +740,6 @@ const alignSingleSection = (imageContainer, textContainer) => {
 }
 
 .home-hero {
-  padding: 0px 0 60px;
   text-align: center;
 
   .hero-title {
@@ -1391,7 +1390,6 @@ const alignSingleSection = (imageContainer, textContainer) => {
 
 @media (max-width: 768px) {
   .home-hero {
-    padding: 0px 0 40px;
 
     .hero-title {
       font-size: 36px;
