@@ -55,6 +55,16 @@ function getList(params, path1, pathname) {
   res.map((item) => {
     item.text = item.text.replace(/\.md$/, "");
   });
+
+  // 如果存在"Symedia部署流程"，将其放在第一位
+  const deploymentDocIndex = res.findIndex(
+    (item) => item.text === "Symedia部署流程"
+  );
+  if (deploymentDocIndex !== -1) {
+    const deploymentDoc = res.splice(deploymentDocIndex, 1)[0];
+    res.unshift(deploymentDoc);
+  }
+
   return res;
 }
 

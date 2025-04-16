@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="hero-actions" style="margin-top: 20px;">
-        <a class="action-button primary" href="/archive/symedia/Symedia部署教程">立即开始</a>
+        <a class="action-button primary" href="/archive/symedia/Symedia部署流程">立即开始</a>
         <a class="action-button secondary" href="/donate">下载软件</a>
       </div>
       <p class="hero-note">只是一款自动化工具，不提供任何资源</p>
@@ -126,7 +126,7 @@
       <h2>开始使用Symedia</h2>
       <p>只需简单几步配置，即可享受全自动的媒体管理体验</p>
       <div class="cta-buttons">
-        <a class="action-button primary enhanced" href="/archive/symedia/Symedia部署教程">快速开始</a>
+        <a class="action-button primary enhanced" href="/archive/symedia/Symedia部署流程">快速开始</a>
       </div>
     </div>
   </div>

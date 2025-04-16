@@ -1,6 +1,12 @@
-转载自作者：@Jamision
+### Tg Bot 保姆级流程
 
-原文链接：https://blog.viplee.cc/archives/Symedia-FastEmby
+::: tip 文章信息
+
+- **转载自作者**：@Jamision
+
+- **原文链接**：https://blog.viplee.cc/archives/Symedia-FastEmby
+
+:::
 
 (1). 打开 telegram，在顶部栏搜索 @BotFather
 
