@@ -12,15 +12,15 @@
 
 [Webhook 监控教程](/archive/symedia/Webhook监控教程)
 
-## EmbyServer 配置
+## EmbyServer
 
 [EmbyServer 配置](/archive/symedia/EmbyServer配置)
 
-## 配置神医插件
+## 神医插件
 
 [神医插件简明使用教程](/archive/symedia/神医插件简明使用教程)
 
-## 配置通知工具
+## 通知工具
 
 [通知工具配置](/archive/symedia/通知工具配置)
 
