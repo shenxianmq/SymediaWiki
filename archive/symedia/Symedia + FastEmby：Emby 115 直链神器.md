@@ -108,14 +108,8 @@ services:
     image: shenxianmq/symedia:latest # 拉取最新镜像
     container_name: symedia # 容器名称
     restart: always # 重启策略
-    deploy:
-      resources:
-        limits:
-          cpus: "1" # 限制容器最多使用 1 个 CPU
-          memory: 1G # 限制容器最多使用 1GB 内存
     environment:
       - TZ=Asia/Shanghai # 容器时区
-      - ALL_PROXY=http://192.168.31.2:7893 # 环境代理
       - LICENSE_KEY='' # 作者发的激活码
     ports:
       - "8095:8095" # 映射端口：主机 8095 -> 容器 8095
@@ -141,11 +135,6 @@ services:
     container_name: FastEmby # 容器名称
     restart: unless-stopped # 重启策略
     network_mode: host # 网络模式
-    deploy:
-      resources:
-        limits:
-          cpus: "1" # 限制容器最多使用 1 个 CPU
-          memory: 1G # 限制容器最多使用 1GB 内存
     environment:
       - TZ=Asia/Shanghai # 环境变量：容器时区
       - CHECKIN=0 # 关闭 115 自动签名
