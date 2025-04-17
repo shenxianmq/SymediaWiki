@@ -40,7 +40,7 @@ export default defineConfig({
       {
         text: "Wiki",
         items: [
-          { text: "Symedia", link: "/archive/symedia/Symedia部署教程" },
+          { text: "Symedia", link: "/archive/symedia/Symedia部署流程" },
           { text: "FastEmby", link: "/archive/fastemby/FastEmby部署教程" },
         ],
       },
