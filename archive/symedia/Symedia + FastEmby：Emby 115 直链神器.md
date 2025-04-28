@@ -54,7 +54,7 @@
     - [https://hub.docker.com/r/shenxianmq/fastemby](https://hub.docker.com/r/shenxianmq/fastemby)
 
   - cloudnas：[https://hub.docker.com/r/cloudnas/clouddrive2](https://hub.docker.com/r/cloudnas/clouddrive2)
-  - amilys：[https://hub.docker.com/r/amilys/embyserver](https://hub.docker.com/r/amilys/embyserver)
+  - emby：[https://hub.docker.com/r/emby/embyserver](https://hub.docker.com/r/emby/embyserver)
 
 ## 五. 部署教程
 
@@ -154,15 +154,10 @@ version: "3"
 
 services:
   emby_server:
-    image: amilys/embyserver:latest # 使用最新镜像
+    image: emby/embyserver:latest # 使用最新镜像
     container_name: emby_server # 容器名称
     restart: unless-stopped # 重启策略
     network_mode: bridge # 网络模式
-    deploy:
-      resources:
-        limits:
-          cpus: "2" # 限制容器最多使用 2 个 CPU
-          memory: 2G # 限制容器最多使用 2GB 内存
     environment:
       - PUID=0
       - PGID=0
