@@ -19,7 +19,7 @@
     
 <div class="info-card purple-bg">
       <h3>📞 联系方式</h3>
-      <p>Tg: <a href="https://t.me/shenxianmqdhc" class="link">@shenxianmqdhc</a></p>
+      <p>Tg: <a href="https://t.me/qianqiumq" class="link">@qianqiumq</a></p>
       <p>有任何问题欢迎通过 Tg 联系作者</p>
     </div>
   </div>
