@@ -127,7 +127,7 @@
       <h2>开始使用Symedia</h2>
       <p>只需简单几步配置，即可享受全自动的媒体管理体验</p>
       <div class="cta-buttons">
-        <a class="action-button primary enhanced" href="/archive/symedia/Symedia部署流程">快速开始</a>
+        <a class="action-button primary enhanced" href="https://wiki-sa.viplee.cc">快速开始</a>
       </div>
     </div>
   </div>
