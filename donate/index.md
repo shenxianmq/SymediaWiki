@@ -10,7 +10,7 @@
     <div class="info-card blue-bg">
       <h3>💎 捐赠流程</h3>
       <ol>
-        <li>扫描右侧二维码支付 <b class="highlight">199元</b></li>
+        <li>扫描右侧二维码支付 <b class="highlight">179元</b></li>
         <li>付款时<b>备注您的邮箱地址</b></li>
         <li>作者会将授权码发送至您提供的邮箱</li>
       </ol>
