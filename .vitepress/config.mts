@@ -71,6 +71,13 @@ export default defineConfig({
           items: set_sidebar("/archive/fastemby"),
         },
       ],
+      "/archive/redia/": [
+        {
+          text: "Redia",
+          collapsed: false,
+          items: set_sidebar("/archive/redia"),
+        },
+      ],
     },
     // sidebar: [
     //   {

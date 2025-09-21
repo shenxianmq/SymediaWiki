@@ -1,12 +1,14 @@
-# Redia 部署教程
+# 🚀 Redia 部署教程
 
-## 一、docker 部署
+> Redia 是一个强大的媒体服务器反向代理工具，支持多种云盘直链播放。本教程将详细介绍如何部署和配置 Redia。
+
+## 📦 一、Docker 部署
 
 ### 1.1 容器安装
 
-#### Docker CLI
+#### 🐳 Docker CLI
 
-```plain
+```bash
 docker run -d \
   --name Redia \
   --network host \
@@ -14,10 +16,9 @@ docker run -d \
   -v /vol1/1000/appdata/redia/config:/app/config \
   -v /var/run/docker.sock:/var/run/docker.sock:ro \
   shenxianmq/redia:latest
-
 ```
 
-#### Docker Compose
+#### 🐙 Docker Compose
 
 ```yaml
 services:
@@ -32,56 +33,103 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 ```
 
-注意：路径 1 需要自己在本地创建，可以自定义
+::: warning 注意事项
 
-路径 1：/vol1/1000/appdata/redia/config
+- 路径需要提前在本地创建，可以自定义
+- 配置路径：`/vol1/1000/appdata/redia/config`
+  :::
 
-容器创建后，就可以通过 http://ip:9025 进行访问
+### 1.2 访问服务
 
-默认账号密码为:admin password
+容器创建成功后，可通过以下地址访问：
 
-## 二、配置方法
+```
+http://你的服务器IP:9025
+```
+
+::: info 默认登录信息
+
+- **用户名**：`admin`
+- **密码**：`password`
+  :::
+
+## ⚙️ 二、配置方法
 
 ### 2.1 配置云盘助手
 
-打开反向代理-云盘助手，以 115 助手为例
-![](https://images.symedia.top/2025/09/21/20250921224635_0f7f5c39.png)
-添加 115 配置，新手直接按下图配置即可，配置好后点击保存，注意红框中的配置名称为“115”，下面配置 Emby 服务器会用到
-![](https://images.symedia.top/2025/09/21/20250921224728_831d3529.png)
+#### 步骤一：打开云盘助手配置
+
+导航到 **反向代理** → **云盘助手**，以 115 助手为例：
+
+![配置云盘助手](https://images.symedia.top/2025/09/21/20250921224635_0f7f5c39.png)
+
+#### 步骤二：添加 115 配置
+
+按照下图配置 115 助手，新手可直接参考此配置：
+
+![115配置示例](https://images.symedia.top/2025/09/21/20250921224728_831d3529.png)
+
+::: tip 重要提醒
+请记住红框中的**配置名称**为 `115`，这个名称在后续配置 Emby 服务器时会用到！
+:::
 
 ### 2.2 配置 Emby 服务器
 
-打开反向代理-媒体服务器-Emby 服务器
-![](https://images.symedia.top/2025/09/21/20250921224506_0dceb6a4.png)
+#### 步骤一：打开 Emby 服务器配置
 
-添加配置,根据实际情况填写，这里最关键的在于路径替换，你需要把你 strm 文件中路径的网盘根目录，指向 2.1 中你添加的网盘助手的配置名称
+导航到 **反向代理** → **媒体服务器** → **Emby 服务器**：
 
-可以直接去 Emby 中，随意点开一个文件，看一下文件的路径，如下图
-![](https://images.symedia.top/2025/09/21/20250921225106_53733573.png)
-该文件的路径为
+![Emby服务器配置](https://images.symedia.top/2025/09/21/20250921224506_0dceb6a4.png)
 
-**/mnt/CloudNAS/CloudDrive2/115/看剧/links/电视剧/韩剧/又是吴海英 (2016) {tmdb-66082}/Season 1/又是吴海英.2016.S01E01.第 1 集.1080p.Disney.WEB-DL.H.264.mkv**
+#### 步骤二：理解路径替换机制
 
-这是 115 网盘中的文件，该文件的网盘根目录为
+配置的核心在于**路径替换**，需要将 strm 文件中的网盘根目录路径，映射到步骤 2.1 中添加的网盘助手配置名称。
 
-**/mnt/CloudNAS/CloudDrive2/115**
+##### 📋 如何查看文件路径
 
-2.1 中 115 助手添加的配置名称为“115”
+在 Emby 中随意点开一个文件，查看文件路径：
 
-所以路径替换就是
+![文件路径示例](https://images.symedia.top/2025/09/21/20250921225106_53733573.png)
 
-**/mnt/CloudNAS/CloudDrive2/115 => 115**
+##### 🔍 路径分析示例
 
-同理，如果你有 123 云盘，路径替换就可以写作
+以上图文件为例，完整路径为：
 
-**/mnt/CloudNAS/CloudDrive2/123 云盘 => 123**
+```
+/mnt/CloudNAS/CloudDrive2/115/看剧/links/电视剧/韩剧/又是吴海英 (2016) {tmdb-66082}/Season 1/又是吴海英.2016.S01E01.第 1 集.1080p.Disney.WEB-DL.H.264.mkv
+```
 
-![](https://images.symedia.top/2025/09/21/20250921224928_0d4edfa7.png)
+**网盘根目录**：`/mnt/CloudNAS/CloudDrive2/115`
 
-Tips: 如果你同时有多个 115 要进行替换，那么请在路径替换的末尾添加上/，防止替换出错，如
+**配置名称**（来自步骤 2.1）：`115`
 
-**/mnt/CloudNAS/CloudDrive2/115/ => 115/**
+**路径替换规则**：`/mnt/CloudNAS/CloudDrive2/115 => 115`
 
-**/mnt/CloudNAS/CloudDrive2/115-2/ => 115-2/**
+#### 步骤三：配置路径替换
 
-保存后，直接通过反代端口访问即可
+![Emby配置示例](https://images.symedia.top/2025/09/21/20250921224928_0d4edfa7.png)
+
+##### 📝 更多示例
+
+| 网盘类型 | 路径替换规则                               |
+| -------- | ------------------------------------------ |
+| 115 网盘 | `/mnt/CloudNAS/CloudDrive2/115 => 115`     |
+| 123 云盘 | `/mnt/CloudNAS/CloudDrive2/123云盘 => 123` |
+
+::: warning 多个同类网盘的处理
+如果您有多个相同类型的网盘，请在路径末尾添加 `/` 以避免替换错误：
+
+```
+/mnt/CloudNAS/CloudDrive2/115/ => 115/
+/mnt/CloudNAS/CloudDrive2/115-2/ => 115-2/
+```
+
+:::
+
+#### 步骤四：保存并访问
+
+配置完成后，点击保存，即可通过反向代理端口访问 Emby 服务。
+
+::: success 完成
+恭喜！您已成功配置 Redia，现在可以享受流畅的云盘直链播放体验了！🎉
+:::
