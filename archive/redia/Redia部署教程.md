@@ -12,26 +12,65 @@
 如果您已经部署了 **FastEmby**，请先删除 FastEmby 容器后再进行 Redia 安装，以避免端口冲突和功能重复。
 :::
 
+**💻 AMD 架构版本**
+
 ```bash
 docker run -d \
   --name Redia \
   --network host \
+  --restart unless-stopped \
   -e LICENSE_KEY=你的Redia密钥 \
   -v /vol1/1000/appdata/redia/config:/app/config \
   -v /var/run/docker.sock:/var/run/docker.sock:ro \
   shenxianmq/redia:latest
 ```
 
-#### 🐙 Docker Compose
+**🔧 ARM64 架构版本**
+
+```bash
+docker run -d \
+  --name Redia \
+  --network host \
+  --restart unless-stopped \
+  -e LICENSE_KEY=你的Redia密钥 \
+  -v /vol1/1000/appdata/redia/config:/app/config \
+  -v /var/run/docker.sock:/var/run/docker.sock:ro \
+  shenxianmq/redia_arm64:latest
+```
+
+#### 🐙 Docker Compose 部署
+
+**💻 AMD 架构版本**
 
 ```yaml
+version: "3.8"
+
 services:
-  Redia:
+  redia:
     container_name: Redia
-    environment:
-      - LICENSE_KEY=你的Redia密钥
     image: shenxianmq/redia:latest
     network_mode: host
+    restart: unless-stopped
+    environment:
+      - LICENSE_KEY=你的Redia密钥
+    volumes:
+      - /vol1/1000/appdata/redia/config:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+```
+
+**🔧 ARM64 架构版本**
+
+```yaml
+version: "3.8"
+
+services:
+  redia:
+    container_name: Redia
+    image: shenxianmq/redia_arm64:latest
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      - LICENSE_KEY=你的Redia密钥
     volumes:
       - /vol1/1000/appdata/redia/config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
