@@ -37,7 +37,7 @@ FastEmby 可以帮助你，在 Emby 服务下，快速部署网盘的 302 模式
 docker run -d \
 --name FastEmby \
 -e TZ=Asia/Shanghai \
--e LICENSE=eyj89j9fjrfkr9fpi
+-e LICENSE_KEY=eyj89j9fjrfkr9fpi
 -v /volume1/docker/FastEmby/config:/app/config \
 -v /volume1/docker/FastEmby/log:/app/log \
 --network host \
