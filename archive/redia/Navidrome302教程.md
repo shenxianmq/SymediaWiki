@@ -44,7 +44,7 @@
 
 将该映射配置添加到 Navidrome 的部署命令中：
 
-![](https://images.symedia.top/2025/10/11/20251011204102_80e87c0c.png)
+![](https://images.symedia.top/2025/10/11/20251011215710_148e9a15.png)
 
 ### 创建 Navidrome 容器
 
