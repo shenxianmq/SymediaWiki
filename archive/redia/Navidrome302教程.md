@@ -73,7 +73,7 @@ services:
       - ND_PORT=4533
       - GODEBUG=asyncpreemptoff=1
     image: deluan/navidrome
-    network_mode: bridge-mq
+    network_mode: bridge
     ports:
       - 4533:4533
     privileged: true
