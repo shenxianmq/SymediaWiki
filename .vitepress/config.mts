@@ -42,7 +42,7 @@ export default defineConfig({
         items: [
           // { text: "Symedia", link: "/archive/symedia/Symedia部署流程" },
           { text: "Symedia", link: "https://wiki.viplee.cc" },
-          { text: "FastEmby", link: "/archive/fastemby/FastEmby部署教程" },
+          { text: "FastEmby", link: "/archive/fastemby/FastEmby 2.0部署教程" },
           { text: "Redia", link: "/archive/redia/Redia部署教程" },
         ],
       },
