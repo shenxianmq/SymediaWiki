@@ -46,7 +46,7 @@ services:
     network_mode: host
     restart: unless-stopped
     environment:
-      - LICENSE_KEY=你的FastEmby密钥
+      - LICENSE_KEY=你的Symedia密钥
     volumes:
       - /vol1/1000/appdata/fastemby/config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -64,7 +64,7 @@ services:
     network_mode: host
     restart: unless-stopped
     environment:
-      - LICENSE_KEY=你的FastEmby密钥
+      - LICENSE_KEY=你的Symedia密钥
     volumes:
       - /vol1/1000/appdata/fastemby/config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
