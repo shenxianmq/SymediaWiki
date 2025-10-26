@@ -26,7 +26,7 @@ docker run -d \
   --name FastEmby \
   --network host \
   --restart unless-stopped \
-  -e LICENSE_KEY=你的FastEmby密钥 \
+  -e LICENSE_KEY=你的Symedia密钥 \
   -v /vol1/1000/appdata/fastemby/config:/app/config \
   -v /var/run/docker.sock:/var/run/docker.sock:ro \
   shenxianmq/fastemby_arm64:latest
