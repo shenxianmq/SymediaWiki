@@ -6,7 +6,7 @@
 
 #### 🐳 Docker CLI
 
-**💻 AMD 架构版本**
+**💻 X86 架构版本**
 
 ```bash
 docker run -d \
@@ -34,7 +34,7 @@ docker run -d \
 
 #### 🐙 Docker Compose 部署
 
-**💻 AMD 架构版本**
+**💻 X86 架构版本**
 
 ```yaml
 version: "3.8"

@@ -12,7 +12,7 @@
 如果您已经部署了 **FastEmby**，请先删除 FastEmby 容器后再进行 Redia 安装，以避免端口冲突和功能重复。
 :::
 
-**💻 AMD 架构版本**
+**💻 X86 架构版本**
 
 ```bash
 docker run -d \
@@ -40,7 +40,7 @@ docker run -d \
 
 #### 🐙 Docker Compose 部署
 
-**💻 AMD 架构版本**
+**💻 X86 架构版本**
 
 ```yaml
 version: "3.8"
