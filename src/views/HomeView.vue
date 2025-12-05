@@ -133,6 +133,9 @@
   </div>
   <!-- 版权信息 -->
   <footer class="home-footer">
+    <div class="disclaimer">
+      <p>本软件仅用于合法用途，用户不得利用本软件从事违法违规行为，因用户违法使用所产生的一切后果均由用户自行承担。</p>
+    </div>
     <div class="copyright">
       Copyright © 2024-2025 Shenxian
     </div>
@@ -1632,6 +1635,21 @@ const alignSingleSection = (imageContainer, textContainer) => {
   text-align: center;
   padding: 30px 0;
   border-top: 1px solid var(--vp-c-divider);
+}
+
+.disclaimer {
+  margin-bottom: 20px;
+  padding: 0 20px;
+
+  p {
+    font-size: 13px;
+    color: var(--vp-c-text-3);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .copyright {

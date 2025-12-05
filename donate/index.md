@@ -37,6 +37,12 @@
   <p>授权码仅限本人使用，在多设备上使用同一授权码可能导致授权被封禁！</p>
 </div>
 
+## 免责声明
+
+<div class="disclaimer-box">
+  <p>本软件仅用于合法用途，用户不得利用本软件从事违法违规行为，因用户违法使用所产生的一切后果均由用户自行承担。</p>
+</div>
+
 <style>
 :root {
   --primary-color: #496ECE;
@@ -154,5 +160,21 @@
 .warning-box h3 {
   margin-top: 0;
   color: var(--warning-color);
+}
+
+.disclaimer-box {
+  background: rgba(73, 110, 206, 0.05);
+  border-left: 4px solid var(--primary-color);
+  padding: 15px;
+  border-radius: 4px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.disclaimer-box p {
+  margin: 0;
+  color: var(--light-text);
+  font-size: 14px;
+  line-height: 1.6;
 }
 </style>
