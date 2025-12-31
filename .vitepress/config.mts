@@ -44,7 +44,7 @@ export default defineConfig({
           { text: "Symedia", link: "https://wiki.viplee.cc" },
           { text: "FastEmby", link: "/archive/fastemby/FastEmby 2.0部署教程" },
           { text: "Redia", link: "/archive/redia/Redia部署教程" },
-          { text: "Telexfer", link: "/archive/telexfer/Telexfer功能介绍" },
+          { text: "Telexfer", link: "/archive/telexfer/Telexfer简明使用教程" },
         ],
       },
       { text: "捐赠", link: "/donate" },
