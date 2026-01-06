@@ -1,3 +1,7 @@
+---
+title: 支持 Dockter 发展
+---
+
 # 支持 Dockter 发展
 
 <h2 class="gradient-title">成为 Dockter 的支持者</h2>
@@ -5,66 +9,12 @@
 
 ## 版本说明
 
-<div class="version-grid">
-  <div class="version-card">
-    <div class="version-header basic-bg">
-      <h3>基础版</h3>
-      <div class="price">¥139</div>
-    </div>
-    <div class="version-content">
-      <ul>
-        <li><strong>Agent 数量：</strong>0 个</li>
-        <li>本地 Docker 管理</li>
-        <li>基础文件管理</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="version-card">
-    <div class="version-header standard-bg">
-      <h3>标准版</h3>
-      <div class="price">¥169</div>
-    </div>
-    <div class="version-content">
-      <ul>
-        <li><strong>Agent 数量：</strong>5 个</li>
-        <li>远程机器 Docker 管理</li>
-        <li>文件管理功能</li>
-        <li>SSH 命令执行</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="version-card">
-    <div class="version-header advanced-bg">
-      <h3>高级版</h3>
-      <div class="price">¥219</div>
-    </div>
-    <div class="version-content">
-      <ul>
-        <li><strong>Agent 数量：</strong>10 个</li>
-        <li>远程机器 Docker 管理</li>
-        <li>文件管理功能</li>
-        <li>SSH 命令执行</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="version-card">
-    <div class="version-header pro-bg">
-      <h3>专业版</h3>
-      <div class="price">¥299</div>
-    </div>
-    <div class="version-content">
-      <ul>
-        <li><strong>Agent 数量：</strong>20 个</li>
-        <li>远程机器 Docker 管理</li>
-        <li>文件管理功能</li>
-        <li>SSH 命令执行</li>
-      </ul>
-    </div>
-  </div>
-</div>
+| 版本   | 价格 | Agent 数量 | 功能说明                                           |
+| ------ | ---- | ---------- | -------------------------------------------------- |
+| 基础版 | ¥139 | 0 个       | 本地 Docker 管理、文件管理                         |
+| 标准版 | ¥169 | 5 个       | 本地与远程机器 Docker 管理、文件管理、SSH 命令执行 |
+| 高级版 | ¥219 | 10 个      | 本地与远程机器 Docker 管理、文件管理、SSH 命令执行 |
+| 专业版 | ¥299 | 20 个      | 本地与远程机器 Docker 管理、文件管理、SSH 命令执行 |
 
 <div class="agent-info">
   <h3>🤖 什么是 Agent？</h3>
@@ -90,14 +40,12 @@
       </ol>
       <p class="tip">提示：若邮箱过长备注不全，可在付款后使用顾客留言功能</p>
     </div>
-    
-    <div class="info-card purple-bg">
+<div class="info-card purple-bg">
       <h3>📞 联系方式</h3>
       <p>Tg: <a href="https://t.me/qianqiumq" class="link">@qianqiumq</a></p>
       <p>有任何问题欢迎通过 Tg 联系作者</p>
     </div>
   </div>
-
   <div class="qrcode-container">
     <img src="/wechat.png" alt="微信支付" class="qrcode">
     <p class="qrcode-label">微信支付</p>
@@ -122,12 +70,8 @@
   --primary-color: #496ECE;
   --secondary-color: #8965e0;
   --warning-color: #ff3b30;
-  --text-color: #333;
+  --text-color: #222;
   --light-text: #666;
-  --basic-color: #4a90e2;
-  --standard-color: #50c878;
-  --advanced-color: #ff6b6b;
-  --pro-color: #9b59b6;
 }
 
 .center {
@@ -151,76 +95,6 @@
   margin: 0 auto 20px;
 }
 
-.version-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin: 30px 0;
-}
-
-.version-card {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.version-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-}
-
-.version-header {
-  padding: 20px;
-  text-align: center;
-  color: white;
-}
-
-.basic-bg {
-  background: linear-gradient(135deg, var(--basic-color) 0%, #357abd 100%);
-}
-
-.standard-bg {
-  background: linear-gradient(135deg, var(--standard-color) 0%, #3fa866 100%);
-}
-
-.advanced-bg {
-  background: linear-gradient(135deg, var(--advanced-color) 0%, #e55555 100%);
-}
-
-.pro-bg {
-  background: linear-gradient(135deg, var(--pro-color) 0%, #7d3c98 100%);
-}
-
-.version-header h3 {
-  margin: 0 0 10px 0;
-  font-size: 24px;
-}
-
-.price {
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.version-content {
-  padding: 20px;
-  background: white;
-}
-
-.version-content ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.version-content li {
-  padding: 8px 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.version-content li:last-child {
-  border-bottom: none;
-}
 
 .agent-info {
   background: rgba(73, 110, 206, 0.1);
