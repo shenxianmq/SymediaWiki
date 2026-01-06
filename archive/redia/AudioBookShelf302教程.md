@@ -39,6 +39,12 @@ services:
 
 ## 三、配置 Redia
 
+### 先去 audiobookshelf 中去生成 api key
+
+![](https://images.symedia.top/2026/01/06/20260106175057_dc1d64ae.png)
+
 ### 路径替换设置
+
+![](https://images.symedia.top/2026/01/06/20260106175123_b086004c.png)
 
 与 Emby 一样，在 Redia 中直接进行智能生成映射即可。
