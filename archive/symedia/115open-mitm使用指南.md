@@ -112,7 +112,7 @@ export GITHUB_BASE_URL="https://cdn.jsdelivr.net/gh/shenxianmq/SymediaWiki@main"
 
 ![](https://images.symedia.top/2026/01/25/20260125182546_c5473759.png)
 
-![](https://images.symedia.top/2026/01/25/20260125182601_aa7c7dee.png)
+![](https://images.symedia.top/2026/01/25/20260125183237_06f6e097.png)
 
 ### 验证配置
 
