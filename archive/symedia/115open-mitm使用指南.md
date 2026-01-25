@@ -125,7 +125,7 @@ export GITHUB_BASE_URL="https://cdn.jsdelivr.net/gh/shenxianmq/SymediaWiki@main"
 ![](https://images.symedia.top/2026/01/25/20260125182753_e7882c63.png)
 
 ::: tip 说明
-- 代理地址通常为：`http://localhost:8812` 或 `http://127.0.0.1:8812`
+- 代理地址通常为：`http://设备ip:8812`
 - 如果 CloudDrive2 和 115open-mitm 不在同一台机器上，请使用实际的服务器 IP 地址
 - 配置完成后，115 网盘的流量将通过 115open-mitm 代理进行转发
 :::
