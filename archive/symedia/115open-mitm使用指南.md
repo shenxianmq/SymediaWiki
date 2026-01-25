@@ -8,6 +8,8 @@
 
 首先，使用以下 Docker Compose 配置部署 115open-mitm 容器：
 
+**方式一：Docker Compose**
+
 ```yaml
 services:
   open115-mitm:
@@ -17,18 +19,30 @@ services:
       - CONFIG_PATH=/app/config/config.json
     image: shenxianmq/open115-mitm:latest
     network_mode: host
-    ports:
-      - 8812:8812
-      - 8813:8813
     restart: always
     volumes:
       - /vol1/1000/appdata/open115-mitm/config:/app/config
       - /vol1/1000/appdata/open115-mitm/cert:/app/cert  # 证书文件存放目录
 ```
 
+**方式二：Docker Run**
+
+```bash
+docker run -d \
+  --name open115-mitm \
+  --restart always \
+  --network host \
+  -e TZ=Asia/Shanghai \
+  -e CONFIG_PATH=/app/config/config.json \
+  -v /vol1/1000/appdata/open115-mitm/config:/app/config \
+  -v /vol1/1000/appdata/open115-mitm/cert:/app/cert \
+  shenxianmq/open115-mitm:latest
+```
+
 ::: tip 说明
 - 请根据实际情况修改路径映射
 - `cert` 目录用于存放 mitmproxy 证书文件，后续配置 CloudDrive2 时需要用到
+- 推荐使用 Docker Compose 方式，便于管理和维护
 :::
 
 ## 二、获取证书路径
