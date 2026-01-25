@@ -100,6 +100,16 @@ export GITHUB_BASE_URL="https://cdn.jsdelivr.net/gh/shenxianmq/SymediaWiki@main"
 
 ![](https://images.symedia.top/2026/01/25/20260125182601_aa7c7dee.png)
 
+### 验证配置
+
+配置完成后，可以通过以下方式验证代理是否正常工作：
+
+1. 在 CloudDrive2 中访问 115 网盘的文件夹
+2. 查看 115open-mitm 容器的日志
+3. 如果配置成功，日志中会出现拦截请求的记录，如下图所示：
+
+![](https://images.symedia.top/2026/01/25/20260125182753_e7882c63.png)
+
 ::: tip 说明
 - 代理地址通常为：`http://localhost:8812` 或 `http://127.0.0.1:8812`
 - 如果 CloudDrive2 和 115open-mitm 不在同一台机器上，请使用实际的服务器 IP 地址
