@@ -37,12 +37,16 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "主页", link: "/" },
+      { text: "DockTer", link: "https://dockter.symedia.top" },
       {
         text: "Wiki",
         items: [
           // { text: "Symedia", link: "/archive/symedia/Symedia部署流程" },
           { text: "Symedia", link: "https://wiki.viplee.cc" },
-          { text: "Dockter", link: "https://dockter.symedia.top/archive/dockter" },
+          {
+            text: "Dockter",
+            link: "https://dockter.symedia.top/archive/dockter",
+          },
           { text: "FastEmby", link: "/archive/fastemby/FastEmby 2.0部署教程" },
           { text: "Redia", link: "/archive/redia/Redia部署教程" },
           { text: "Telexfer", link: "/archive/telexfer/Telexfer简明使用教程" },
