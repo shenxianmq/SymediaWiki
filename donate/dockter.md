@@ -37,6 +37,7 @@ title: 支持 Dockter 发展
         <li>扫描右侧二维码支付对应金额</li>
         <li>付款时<b>备注您的邮箱地址和版本</b></li>
         <li>作者会将授权码发送至您提供的邮箱</li>
+        <li>若第一个二维码无法支付，可以使用第二个二维码进行支付</li>
       </ol>
       <p class="tip">提示：若邮箱过长备注不全，可在付款后使用顾客留言功能</p>
     </div>
@@ -48,6 +49,7 @@ title: 支持 Dockter 发展
   </div>
   <div class="qrcode-container">
     <img src="/wechat.png" alt="微信支付" class="qrcode">
+    <img src="/wechat-2.png" alt="微信支付2" class="qrcode">
     <p class="qrcode-label">微信支付</p>
   </div>
 </div>
