@@ -13,6 +13,7 @@
         <li>扫描右侧二维码支付 <b class="highlight">179元</b></li>
         <li>付款时<b>备注您的邮箱地址</b></li>
         <li>作者会将授权码发送至您提供的邮箱</li>
+        <li>若扫码支付显示无法支付，可过个10-20分钟支付，或换一个微信账号进行支付</li>
       </ol>
       <p class="tip">提示：若邮箱过长备注不全，可在付款后使用顾客留言功能</p>
     </div>
@@ -26,7 +27,7 @@
 
   <div class="qrcode-container">
     <img src="/wechat.png" alt="微信支付" class="qrcode">
-    <img src="/wechat-2.png" alt="微信支付2" class="qrcode">
+    <!-- <img src="/wechat-2.png" alt="微信支付2" class="qrcode"> -->
     <p class="qrcode-label">微信支付</p>
   </div>
 </div>
