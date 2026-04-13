@@ -26,9 +26,14 @@
   </div>
 
   <div class="qrcode-container">
+  <div>
     <img src="/wechat.png" alt="微信支付" class="qrcode">
+        <p class="qrcode-label">微信支付</p>
+  </div>
+    <div>
     <img src="/wechat-2.png" alt="微信支付2" class="qrcode">
-    <p class="qrcode-label">微信支付</p>
+        <p class="qrcode-label">微信支付2</p>
+      </div>
   </div>
 </div>
 
@@ -133,7 +138,7 @@
   flex: 1;
   min-width: 300px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: center;
