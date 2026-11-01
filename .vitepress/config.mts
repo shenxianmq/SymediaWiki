@@ -42,7 +42,7 @@ export default defineConfig({
         text: "Wiki",
         items: [
           // { text: "Symedia", link: "/archive/symedia/Symedia部署流程" },
-          { text: "Symedia", link: "https://wiki.viplee.cc" },
+          { text: "Symedia", link: "https://wiki.symedia.top" },
           {
             text: "Dockter",
             link: "https://dockter.symedia.top/archive/dockter",
